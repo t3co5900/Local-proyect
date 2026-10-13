@@ -291,8 +291,8 @@ export function seedCatalog(ctx) {
     };
     promo('Docena de empanadas', 24000, [[emp, 12]]);
     promo('Media docena de empanadas', 12500, [[emp, 6]]);
-    promo('3 medialunas', 2400, [[med, 3]]);
-    promo('3 empanadas + gaseosa', 8600, [[emp, 3], [gas, 1]]);
+    promo('Combo 3 medialunas', 2400, [[med, 3]]);
+    promo('Combo 3 empanadas + gaseosa', 8600, [[emp, 3], [gas, 1]]);
   });
   return true;
 }

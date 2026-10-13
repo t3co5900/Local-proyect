@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { api } from '../api.js';
-import { fmtDateTime } from '../format.js';
+import { fmtDateTime, money } from '../format.js';
 import { ConfirmModal, Field, Loading, Modal, useApp, useData } from '../components/ui.jsx';
 import { Products, Promos } from './AdminCatalog.jsx';
 import { Settings } from './AdminSettings.jsx';
@@ -195,6 +195,31 @@ const ACTIONS = {
   'timeclock.edit': 'Fichaje corregido', 'catalog.prices_confirmed': 'Precios confirmados', 'charge.pick': 'Pago elegido entre candidatos',
 };
 
+const DETAIL_LABELS = {
+  amountCents: 'Monto', openingCashCents: 'Efectivo inicial', expectedCents: 'Esperado', countedCashCents: 'Contado', diffCents: 'Diferencia',
+  totalCents: 'Total', priceCents: 'Precio', reason: 'Motivo', type: 'Tipo', qty: 'Cantidad', product: 'Producto', name: 'Nombre', number: 'Venta N°',
+  fullName: 'Nombre', role: 'Rol', lines: 'Productos cargados', from: 'Antes', to: 'Ahora', active: 'Activo', paymentId: 'Pago',
+};
+
+/** Muestra el detalle de un evento de auditoría en castellano y con la plata formateada. */
+function formatDetail(action, detail) {
+  if (!detail) return '';
+  const fmt = (k, v) => {
+    if (k.endsWith('Cents') && typeof v === 'number') return money(v);
+    if (action === 'product.price' && (k === 'from' || k === 'to')) return money(v);
+    if (k === 'type') return v === 'in' ? 'ingreso' : v === 'out' ? 'retiro' : v;
+    if (k === 'role') return v === 'admin' ? 'encargado' : 'cajero';
+    if (typeof v === 'boolean') return v ? 'sí' : 'no';
+    if (typeof v === 'number' && v > 1e12) return fmtDateTime(v);
+    if (Array.isArray(v)) return v.map((x) => (typeof x === 'number' && x > 1e12 ? fmtDateTime(x) : x ?? '—')).join(' → ');
+    return typeof v === 'object' && v !== null ? JSON.stringify(v) : String(v);
+  };
+  return Object.entries(detail)
+    .filter(([k]) => k !== 'approvedBy')
+    .map(([k, v]) => `${DETAIL_LABELS[k] || k}: ${fmt(k, v)}`)
+    .join(' · ');
+}
+
 function Audit() {
   const ev = useData(() => api.get('/api/audit'), []);
   return (
@@ -205,7 +230,7 @@ function Audit() {
         <div className="table-wrap"><table className="t">
           <thead><tr><th>Fecha</th><th>Persona</th><th>Acción</th><th>Detalle</th></tr></thead>
           <tbody>{ev.data.events.map((e) => (
-            <tr key={e.id}><td className="nowrap">{fmtDateTime(e.at)}</td><td>{e.user_name || 'Sistema'}</td><td>{ACTIONS[e.action] || e.action}</td><td className="small muted">{e.detail ? Object.entries(e.detail).map(([k, v]) => `${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`).join(' · ') : ''}</td></tr>
+            <tr key={e.id}><td className="nowrap">{fmtDateTime(e.at)}</td><td>{e.user_name || 'Sistema'}</td><td>{ACTIONS[e.action] || e.action}</td><td className="small muted">{formatDetail(e.action, e.detail)}</td></tr>
           ))}</tbody>
         </table></div>
       )}
