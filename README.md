@@ -65,6 +65,7 @@ server/            API (Express 5), servicios, exportación Excel/PDF, tests
 web/               interfaz (React + Vite), sin dependencias de internet (fuentes locales)
 scripts/           paquete de Windows, lanzadores .bat, prueba de humo con navegador
 docs/              guías: Mercado Pago, Google Drive, marca, Docker/VPS
+                   y la presentación para la dueña (Mr.Cook-POS-presentacion.pdf, fuente en presentacion/)
 ```
 
 ## Límites conocidos

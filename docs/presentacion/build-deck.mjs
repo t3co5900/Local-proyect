@@ -52,7 +52,13 @@ try {
     let maxB = 0; let maxR = 0;
     c.querySelectorAll('*').forEach((e) => { if (e.closest('.frame') && !e.classList.contains('frame')) return; const r = e.getBoundingClientRect(); if (r.width && r.height) { maxB = Math.max(maxB, r.bottom); maxR = Math.max(maxR, r.right); } });
     const b = Math.round(maxB - cb.bottom); const r = Math.round(maxR - cb.right);
-    return b > 2 || r > 2 ? { page: i + 1, id: s.dataset.id, overflowBottomPx: Math.max(b, 0), overflowRightPx: Math.max(r, 0) } : null;
+    // contenedores centrados o flexibles: ningún hijo puede pasarse de su caja (arriba ni abajo)
+    let inner = 0;
+    c.querySelectorAll('.dia, .cols, .two, .cards, .faq, .chk, .cheat, .cmp').forEach((box) => {
+      const bb = box.getBoundingClientRect();
+      [...box.children].forEach((k) => { const kb = k.getBoundingClientRect(); inner = Math.max(inner, Math.round(bb.top - kb.top), Math.round(kb.bottom - bb.bottom)); });
+    });
+    return b > 2 || r > 2 || inner > 2 ? { page: i + 1, id: s.dataset.id, overflowBottomPx: Math.max(b, 0), overflowRightPx: Math.max(r, 0), overflowInnerPx: Math.max(inner, 0) } : null;
   }).filter(Boolean));
 
   fs.mkdirSync(path.dirname(outPdf), { recursive: true });
