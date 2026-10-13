@@ -1,0 +1,482 @@
+[
+ {
+  "id": "login-vacio",
+  "file": "jpg/login-vacio.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pantalla de ingreso: logo, campo Usuario (\"Tu nombre y apellido, o la inicial y el apellido. Ej: Carlos Pérez o C Pérez\"), cuatro puntos del código de 4 dígitos, teclado numérico y botón \"Fichar entrada / salida\"."
+ },
+ {
+  "id": "login-pin",
+  "file": "jpg/login-pin.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pantalla de ingreso con el usuario \"Laura Giménez\" escrito y dos de los cuatro puntos del código llenos."
+ },
+ {
+  "id": "fichar-publico",
+  "file": "jpg/fichar-publico.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pantalla de fichaje sin iniciar sesión (se llega desde el ingreso): usuario \"Martín Sosa\", teclado con puntos del código y botones Entrada / Salida."
+ },
+ {
+  "id": "abrir-turno",
+  "file": "jpg/abrir-turno.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pantalla \"Abrir turno\" (vista de Laura Giménez): aviso negro \"Vas a abrir el turno como Laura Giménez. Quedás registrado como encargado de este turno\", efectivo inicial 20000, tabla de stock con columna \"Contado\" (algunos completados) y observaciones; abajo el botón amarillo \"Abrir turno\"."
+ },
+ {
+  "id": "pos-inicio",
+  "file": "jpg/pos-inicio.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pantalla de venta con el carrito vacío. Arriba las solapas (Todo, Promos, Empanadas, Pizzas, etc.); abajo 4 promos en tarjetas negras (Combo 3 empanadas + gaseosa $8.600, Combo 3 medialunas $2.400, Docena de empanadas $24.000, Media docena $12.500) y los productos con su stock (\"101 u.\"). A la derecha: \"Venta actual\" y \"Últimos cobros\". El usuario que vende es Martín Sosa (cajero)."
+ },
+ {
+  "id": "pos-promos",
+  "file": "jpg/pos-promos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Solapa \"★ Promos\": las 4 promos en tarjetas negras, cada una con lo que incluye y su precio."
+ },
+ {
+  "id": "pos-carrito",
+  "file": "jpg/pos-carrito.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Carrito con 4 Empanada ($2.200 c/u = $8.800) y 1 Gaseosa ($2.500). Total $11.300 en el recuadro negro; botón amarillo \"Cobrar\" debajo."
+ },
+ {
+  "id": "cobro-metodos",
+  "file": "jpg/cobro-metodos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Cobrar $11.300\": 4 botones de medio de pago (Efectivo seleccionado, Transferencia/QR, Débito, Crédito; los digitales dicen \"se confirma solo\"); campo Monto con 11300."
+ },
+ {
+  "id": "cobro-efectivo",
+  "file": "jpg/cobro-efectivo.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cobro en efectivo de $11.300: el cliente paga con $20.000; botones rápidos (Justo, $11.500, $12.000, $15.000, $20.000); recuadro amarillo \"Vuelto $8.700\"; botón \"Cobrar $11.300 en efectivo\"."
+ },
+ {
+  "id": "venta-lista",
+  "file": "jpg/venta-lista.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Venta #N registrada\": Total cobrado $11.300, medio Efectivo $11.300, recuadro amarillo \"Vuelto para el cliente $8.700\" y botón \"Listo — nueva venta\"."
+ },
+ {
+  "id": "cobro-mixto",
+  "file": "jpg/cobro-mixto.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cobro mixto de una Pizza ($13.500): ya figura \"Efectivo $5.000\" cobrado, \"Por cobrar $8.500\", y está elegido Débito con el monto 8500 y el botón \"Cobrar $8.500 · Débito\"."
+ },
+ {
+  "id": "mp-esperando",
+  "file": "jpg/mp-esperando.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cobro de $8.500 con débito esperando a Mercado Pago: círculo amarillo, \"Esperando el pago de $8.500…\", botones \"Cancelar cobro\" y \"Confirmar a mano\". Arriba figura el efectivo $5.000 ya cobrado."
+ },
+ {
+  "id": "mp-confirmado",
+  "file": "jpg/mp-confirmado.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Venta registrada tras confirmarse sola: Total cobrado $13.500, con las tarjetitas Efectivo $5.000 y Débito $8.500."
+ },
+ {
+  "id": "pos-ultimos-cobros",
+  "file": "jpg/pos-ultimos-cobros.jpg",
+  "width": 600,
+  "height": 1073,
+  "kind": "pantalla",
+  "description": "Columna derecha: carrito vacío y \"Últimos cobros\" con las ventas recientes, cada una con su hora, detalle, total y tarjetitas de color (Efectivo en verde, Transferencia en azul, Débito en violeta). Resaltada en amarillo la venta más nueva ($17.200 por Transferencia). Cada una tiene \"anular\"."
+ },
+ {
+  "id": "anular-cajero",
+  "file": "jpg/anular-cajero.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Anular venta\" de una venta de $17.200 (2× Combo 3 empanadas + gaseosa), vista como cajero: motivo escrito (\"Se equivocó de producto\"), aviso negro \"Una anulación la autoriza un encargado\", usuario del encargado \"Laura Giménez\" y teclado del código."
+ },
+ {
+  "id": "mp-sin-internet",
+  "file": "jpg/mp-sin-internet.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cobro de $1.500 (un alfajor) por transferencia: \"Esperando el pago…\" y un aviso rojo \"Sin conexión con Mercado Pago. Si ya viste el pago en tu celular, confirmalo a mano.\"; botones Cancelar cobro / Confirmar a mano."
+ },
+ {
+  "id": "mp-confirmar-mano",
+  "file": "jpg/mp-confirmar-mano.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Diálogo \"Confirmar el cobro a mano\": \"¿Ya comprobaste que $1.500 llegaron a la cuenta? La venta queda marcada como confirmada a mano en el cierre para revisarla después.\" Botones Cancelar / Sí, ya llegó."
+ },
+ {
+  "id": "pos-cobro-manual",
+  "file": "jpg/pos-cobro-manual.jpg",
+  "width": 600,
+  "height": 1073,
+  "kind": "pantalla",
+  "description": "Últimos cobros: la venta más nueva ($1.500, 1× Alfajor, Transferencia) lleva una manito ✋ en la tarjetita porque se confirmó a mano."
+ },
+ {
+  "id": "caja-cajero",
+  "file": "jpg/caja-cajero.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pestaña Caja vista por un cajero (Martín Sosa) con el turno #9 abierto por Laura Giménez: Total vendido, Ventas, Ticket promedio y Anuladas; Cobros por medio de pago; Retiros e ingresos de efectivo; Turnos anteriores. NO aparece el efectivo esperado en caja."
+ },
+ {
+  "id": "caja-encargada",
+  "file": "jpg/caja-encargada.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pestaña Caja vista por la encargada (Laura Giménez), turno #9: Total vendido, Ventas, Ticket promedio y el recuadro negro \"Efectivo esperado en caja\"; cobros por medio de pago y botones Actualizar / Retiro-ingreso de efectivo / Cerrar turno."
+ },
+ {
+  "id": "caja-retiro",
+  "file": "jpg/caja-retiro.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Retiro / ingreso de efectivo\": Retiro seleccionado, monto 3000, motivo \"Compra de servilletas\" y el aviso de que todo lo que se saque de la caja debe quedar registrado."
+ },
+ {
+  "id": "cerrar-1",
+  "file": "jpg/cerrar-1.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cerrar turno, paso 1 de 3: \"Contá el efectivo que hay en la caja ahora\"; campo con 185400. No muestra cuánto debería haber."
+ },
+ {
+  "id": "cerrar-2",
+  "file": "jpg/cerrar-2.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cerrar turno, paso 2 de 3: tabla con cada producto, su stock según sistema y una columna \"Contado\" para escribir lo que se contó (algunos completados)."
+ },
+ {
+  "id": "cerrar-3",
+  "file": "jpg/cerrar-3.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Cerrar turno, paso 3 de 3: resumen (efectivo contado, productos contados), observaciones (\"Todo en orden.\") y aviso rojo de que al cerrar no se pueden cargar más ventas; botón rojo \"Cerrar turno definitivamente\"."
+ },
+ {
+  "id": "cierre-pantalla",
+  "file": "jpg/cierre-pantalla.jpg",
+  "width": 1700,
+  "height": 9333,
+  "kind": "pantalla",
+  "description": "Cierre de turno completo en pantalla (con botones Excel, PDF e Imprimir)."
+ },
+ {
+  "id": "cierre-encabezado",
+  "file": "jpg/cierre-encabezado.jpg",
+  "width": 1700,
+  "height": 272,
+  "kind": "pantalla",
+  "description": "Cierre del turno #3 del miércoles 07/10/2026: encabezado negro con \"Encargado: Laura Giménez · 07/10/2026 08:00 a 07/10/2026 21:00 · Cerró: Martín Sosa\" y cuatro números: Total vendido $771.200, Ventas 115, Digital $490.000, Efectivo $281.200."
+ },
+ {
+  "id": "cierre-cobros",
+  "file": "jpg/cierre-cobros.jpg",
+  "width": 923,
+  "height": 575,
+  "kind": "pantalla",
+  "description": "Cierre del miércoles, \"Cobros por medio de pago\": Efectivo 49 cobros $281.200; Transferencia 38 cobros $282.700; Débito 19 cobros $110.100; Crédito 14 cobros $97.200; Subtotal digital $490.000; Subtotal efectivo $281.200; TOTAL VENDIDO $771.200."
+ },
+ {
+  "id": "cierre-caja",
+  "file": "jpg/cierre-caja.jpg",
+  "width": 923,
+  "height": 737,
+  "kind": "pantalla",
+  "description": "Cierre del miércoles, \"Control de caja (efectivo)\": efectivo inicial $20.000 + ventas en efectivo $281.200 + ingresos $0 − retiros $16.500 = esperado $284.700; contado $284.200; diferencia −$500 (faltante) y la observación \"Se dio vuelto de más en una venta. Faltaron $500.\""
+ },
+ {
+  "id": "cierre-productos",
+  "file": "jpg/cierre-productos.jpg",
+  "width": 1700,
+  "height": 1043,
+  "kind": "pantalla",
+  "description": "Cierre del miércoles, \"Productos vendidos\" por unidad (sueltas, en promos, total) — Empanada 134, Pizza 5, Medialuna 190, Chipá 100, Criollito 40, Alfajor 67, Agua 9, Gaseosa 14 — y \"Promos vendidas\" con cantidad e importe."
+ },
+ {
+  "id": "cierre-inventario",
+  "file": "jpg/cierre-inventario.jpg",
+  "width": 1700,
+  "height": 647,
+  "kind": "pantalla",
+  "description": "Cierre del miércoles, \"Inventario del turno\": para cada producto Inicio, Ingresos, Vendido, Ajustes, Final (sistema) y Final (contado), con diferencia 0. Empanada: 300 → vendió 134 → final 166."
+ },
+ {
+  "id": "cierre-detalle",
+  "file": "jpg/cierre-detalle.jpg",
+  "width": 1700,
+  "height": 601,
+  "kind": "pantalla",
+  "description": "Cierre del miércoles, \"Detalle de ventas\" (primeras filas): número, hora, cajero, qué se vendió, tarjetita de medio de pago y total de cada venta."
+ },
+ {
+  "id": "inventario-stock",
+  "file": "jpg/inventario-stock.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pestaña Inventario → Stock actual: tabla con Producto, Categoría, Stock, \"Avisar desde\" y Estado (OK en verde; \"Stock bajo\" en amarillo para Agua). Botones Descargar Excel, Ajuste/merma y \"+ Ingreso de mercadería\"."
+ },
+ {
+  "id": "inventario-ingreso",
+  "file": "jpg/inventario-ingreso.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Ingreso de mercadería\": tabla con cada producto, su stock actual y una columna \"Entra\" con 300 empanadas, 20 pizzas, 200 alfajores, 250 medialunas, 125 chipás; proveedor \"Fábrica central\" y nota \"Remito 0001-4521\"; botón \"Registrar ingreso\"."
+ },
+ {
+  "id": "inventario-merma",
+  "file": "jpg/inventario-merma.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Ajuste de stock / merma\": Merma seleccionada, producto Empanada, cantidad 2 y motivo \"Se cayeron al piso\" (el motivo es obligatorio)."
+ },
+ {
+  "id": "inventario-movimientos",
+  "file": "jpg/inventario-movimientos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Inventario → Movimientos: lista de cada movimiento de stock con fecha, producto, tipo (etiqueta \"Venta\", etc.), cantidad (negativa si sale), quién lo registró y motivo."
+ },
+ {
+  "id": "fichaje",
+  "file": "jpg/fichaje.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Pestaña Fichaje (vista logueada): a la izquierda \"Fichar entrada o salida\" con usuario, teclado numérico y botones Entrada/Salida; a la derecha \"Ahora en el local\" con Laura Giménez (desde las 07:55) y Martín Sosa (desde las 12:00). Abajo empieza \"Horas trabajadas\"."
+ },
+ {
+  "id": "fichaje-horas",
+  "file": "jpg/fichaje-horas.jpg",
+  "width": 1700,
+  "height": 588,
+  "kind": "pantalla",
+  "description": "Fichaje, parte de la encargada: \"Horas trabajadas\" por persona de la semana del 05/10 al 11/10 (la misma de los reportes): Camila Ríos 23,82 h, Laura Giménez 40,83 h y Martín Sosa 29,03 h, con columnas Fichajes, Horas y Sin salida; debajo \"Fichajes del período\" con entrada y salida de cada uno."
+ },
+ {
+  "id": "reportes-semana",
+  "file": "jpg/reportes-semana.jpg",
+  "width": 1700,
+  "height": 2573,
+  "kind": "pantalla",
+  "description": "Pestaña Reportes (solo encargada) con la semana del 05/10 al 11/10: tarjetas de totales, cobros por medio de pago, ventas por día, productos vendidos, stock del período y turnos. Total ingresado $5.820.500 en 911 ventas."
+ },
+ {
+  "id": "admin-usuarios",
+  "file": "jpg/admin-usuarios.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Administración → Usuarios: tabla del personal (Laura Giménez encargada, Martín Sosa y Camila Ríos cajeros) con rol, último ingreso, estado y botones Editar / Nuevo código."
+ },
+ {
+  "id": "admin-nuevo-usuario",
+  "file": "jpg/admin-nuevo-usuario.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Nuevo usuario\": nombre \"Sofía Paz\", rol Cajero, alias opcional y botón \"Crear y generar código\"."
+ },
+ {
+  "id": "admin-codigo",
+  "file": "jpg/admin-codigo.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Usuario creado\": muestra una sola vez el código de 4 dígitos asignado al azar (0 2 1 1) con el aviso de que no se vuelve a mostrar."
+ },
+ {
+  "id": "admin-productos",
+  "file": "jpg/admin-productos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Administración → Productos: productos agrupados por categoría con precio, \"controla stock\" y estado; botones Categorías y + Nuevo producto."
+ },
+ {
+  "id": "admin-producto-editar",
+  "file": "jpg/admin-producto-editar.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Editar Empanada\": nombre, categoría, precio de venta (2200), \"Controla stock\", \"Avisar cuando queden… 24\" y Activo."
+ },
+ {
+  "id": "admin-promos",
+  "file": "jpg/admin-promos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Administración → Promos: tabla de promos con lo que incluye, precio promo, precio suelto y ahorro (por ejemplo Docena $24.000 vs $26.400 suelto, ahorro $2.400)."
+ },
+ {
+  "id": "admin-promo-editar",
+  "file": "jpg/admin-promo-editar.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Ventana \"Editar Docena de empanadas\": 12 × Empanada, precio $24.000 y el aviso \"Comprado suelto saldría $26.400 · el cliente ahorra $2.400\"."
+ },
+ {
+  "id": "admin-config-mp",
+  "file": "jpg/admin-config-mp.jpg",
+  "width": 1700,
+  "height": 741,
+  "kind": "pantalla",
+  "description": "Configuración → Mercado Pago (cobros automáticos): casilla de activación, el Access Token guardado (oculto), tolerancia en segundos y, tras tocar \"Probar conexión\", un aviso verde \"Conexión correcta · cuenta MRCOOK.LOCAL\"."
+ },
+ {
+  "id": "admin-config-respaldos",
+  "file": "jpg/admin-config-respaldos.jpg",
+  "width": 1700,
+  "height": 715,
+  "kind": "pantalla",
+  "description": "Configuración → Respaldos y Google Drive: carpeta de respaldos (C:\\MrCook\\datos\\backups), semanas a conservar y campos Client ID / Client Secret con botón \"Conectar Google Drive\"."
+ },
+ {
+  "id": "admin-respaldos",
+  "file": "jpg/admin-respaldos.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Administración → Respaldos: explicación y tabla de respaldos de la semana 2026-W41 (uno Automático y uno Manual), estado Correcto, guardados en C:\\MrCook\\datos\\backups\\2026-W41."
+ },
+ {
+  "id": "admin-auditoria",
+  "file": "jpg/admin-auditoria.jpg",
+  "width": 1700,
+  "height": 1020,
+  "kind": "pantalla",
+  "description": "Administración → Auditoría: registro de quién hizo qué (usuario creado, movimiento de efectivo, apertura de turno, ingreso de mercadería, cierre de turno, merma) con fecha, persona y detalle."
+ },
+ {
+  "id": "pdf-cierre-p1",
+  "file": "jpg/pdf-cierre-p1.jpg",
+  "width": 1075,
+  "height": 1422,
+  "kind": "documento",
+  "description": "El cierre de turno en PDF, página 1: datos del turno, cobros por medio de pago, control de caja y productos vendidos. Se puede imprimir."
+ },
+ {
+  "id": "pdf-cierre-p2",
+  "file": "jpg/pdf-cierre-p2.jpg",
+  "width": 975,
+  "height": 1046,
+  "kind": "documento",
+  "description": "El cierre de turno en PDF, página 2: promos, inventario del turno, retiros de efectivo y líneas para firmar."
+ },
+ {
+  "id": "xlsx-cierre-resumen",
+  "file": "jpg/xlsx-cierre-resumen.jpg",
+  "width": 936,
+  "height": 720,
+  "kind": "documento",
+  "description": "Excel del cierre, hoja \"Cierre\": datos del turno, cobros por medio de pago y control de caja, con fórmulas."
+ },
+ {
+  "id": "xlsx-cierre-productos",
+  "file": "jpg/xlsx-cierre-productos.jpg",
+  "width": 935,
+  "height": 953,
+  "kind": "documento",
+  "description": "Excel del cierre, hoja \"Productos vendidos\": unidades sueltas y en promos, y promos vendidas."
+ },
+ {
+  "id": "xlsx-cierre-inventario",
+  "file": "jpg/xlsx-cierre-inventario.jpg",
+  "width": 1346,
+  "height": 533,
+  "kind": "documento",
+  "description": "Excel del cierre, hoja \"Inventario\": inicio, ingresos, vendido, ajustes y final de cada producto."
+ },
+ {
+  "id": "xlsx-cierre-detalle",
+  "file": "jpg/xlsx-cierre-detalle.jpg",
+  "width": 1346,
+  "height": 565,
+  "kind": "documento",
+  "description": "Excel del cierre, hoja \"Detalle de ventas\": cada venta con hora, cajero, medio de pago y total."
+ },
+ {
+  "id": "xlsx-semanal-resumen",
+  "file": "jpg/xlsx-semanal-resumen.jpg",
+  "width": 935,
+  "height": 496,
+  "kind": "documento",
+  "description": "Excel del resumen semanal, hoja \"Resumen\": ingresos de la semana por efectivo, transferencia, débito, crédito y total."
+ },
+ {
+  "id": "xlsx-semanal-dias",
+  "file": "jpg/xlsx-semanal-dias.jpg",
+  "width": 1044,
+  "height": 406,
+  "kind": "documento",
+  "description": "Excel semanal, hoja \"Por día\": ventas de cada día separadas por medio de pago."
+ },
+ {
+  "id": "xlsx-semanal-productos",
+  "file": "jpg/xlsx-semanal-productos.jpg",
+  "width": 935,
+  "height": 685,
+  "kind": "documento",
+  "description": "Excel semanal, hoja \"Productos\": unidades vendidas en la semana."
+ },
+ {
+  "id": "xlsx-semanal-stock",
+  "file": "jpg/xlsx-semanal-stock.jpg",
+  "width": 1229,
+  "height": 538,
+  "kind": "documento",
+  "description": "Excel semanal, hoja \"Stock\": stock inicial, ingresos, vendido y stock final de la semana."
+ },
+ {
+  "id": "xlsx-semanal-mercaderia",
+  "file": "jpg/xlsx-semanal-mercaderia.jpg",
+  "width": 1340,
+  "height": 881,
+  "kind": "documento",
+  "description": "Excel semanal, hoja \"Ingresos de mercadería\": cada ingreso de la semana con fecha, proveedor y quién lo cargó."
+ }
+]

@@ -15,7 +15,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..', '..');
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, v] = a.replace(/^--/, '').split('='); return [k, v ?? true]; }));
 const slidesFile = path.resolve(args.slides || path.join(here, 'slides.json'));
-const assets = path.resolve(args.assets || 'deck-assets');
+const assets = path.resolve(args.assets || path.join(here, 'assets'));
 const outPdf = path.resolve(args.out || path.join(root, 'docs', 'Mr.Cook-POS-presentacion.pdf'));
 const previewDir = args.preview ? path.resolve(args.preview) : null;
 const chromePath = process.env.CHROMIUM_PATH || [
@@ -44,12 +44,13 @@ try {
   await page.waitForTimeout(400);
 
   // control de desbordes: nada tiene que quedar fuera de su diapositiva
+  // (lo de adentro de .frame se ignora: las imágenes recortadas son más grandes que su marco, que las corta)
   const issues = await page.evaluate(() => [...document.querySelectorAll('.slide')].map((s, i) => {
     const c = s.querySelector('.content');
     if (!c) return null;
     const cb = c.getBoundingClientRect();
     let maxB = 0; let maxR = 0;
-    c.querySelectorAll('*').forEach((e) => { const r = e.getBoundingClientRect(); if (r.width && r.height) { maxB = Math.max(maxB, r.bottom); maxR = Math.max(maxR, r.right); } });
+    c.querySelectorAll('*').forEach((e) => { if (e.closest('.frame') && !e.classList.contains('frame')) return; const r = e.getBoundingClientRect(); if (r.width && r.height) { maxB = Math.max(maxB, r.bottom); maxR = Math.max(maxR, r.right); } });
     const b = Math.round(maxB - cb.bottom); const r = Math.round(maxR - cb.right);
     return b > 2 || r > 2 ? { page: i + 1, id: s.dataset.id, overflowBottomPx: Math.max(b, 0), overflowRightPx: Math.max(r, 0) } : null;
   }).filter(Boolean));

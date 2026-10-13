@@ -87,6 +87,8 @@ table.ex { border-collapse: separate; border-spacing: 0; width: 100%; font-size:
 table.ex th { background: var(--yellow); text-align: left; padding: 10px 14px; font-weight: 900; font-size: 17px; }
 table.ex td { padding: 9px 14px; border-top: 1px solid var(--line); font-weight: 600; }
 table.ex tr:nth-child(even) td { background: #fbfaf6; }
+table.ex.dense th { padding: 8px 14px; }
+table.ex.dense td { padding: 5px 14px; font-size: 19px; }
 table.ex .r { text-align: right; font-variant-numeric: tabular-nums; }
 table.ex tr.tot td { background: var(--yellow-100); font-weight: 900; border-top: 2px solid var(--ink); }
 table.ex td.neg { color: var(--red); font-weight: 900; }
