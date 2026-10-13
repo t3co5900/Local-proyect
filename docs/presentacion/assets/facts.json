@@ -1,0 +1,841 @@
+{
+ "days": [
+  {
+   "day": "2026-10-05",
+   "shiftId": 1,
+   "salesCount": 98,
+   "opener": "Laura Giménez",
+   "closer": "Martín Sosa"
+  },
+  {
+   "day": "2026-10-06",
+   "shiftId": 2,
+   "salesCount": 120,
+   "opener": "Laura Giménez",
+   "closer": "Camila Ríos"
+  },
+  {
+   "day": "2026-10-07",
+   "shiftId": 3,
+   "salesCount": 115,
+   "opener": "Laura Giménez",
+   "closer": "Martín Sosa"
+  },
+  {
+   "day": "2026-10-08",
+   "shiftId": 4,
+   "salesCount": 120,
+   "opener": "Camila Ríos",
+   "closer": "Martín Sosa"
+  },
+  {
+   "day": "2026-10-09",
+   "shiftId": 5,
+   "salesCount": 156,
+   "opener": "Laura Giménez",
+   "closer": "Camila Ríos"
+  },
+  {
+   "day": "2026-10-10",
+   "shiftId": 6,
+   "salesCount": 169,
+   "opener": "Martín Sosa",
+   "closer": "Camila Ríos"
+  },
+  {
+   "day": "2026-10-11",
+   "shiftId": 7,
+   "salesCount": 133,
+   "opener": "Laura Giménez",
+   "closer": "Martín Sosa"
+  },
+  {
+   "day": "2026-10-12",
+   "shiftId": 8,
+   "salesCount": 116,
+   "opener": "Laura Giménez",
+   "closer": "Martín Sosa"
+  }
+ ],
+ "wedShiftId": 3,
+ "wednesday": {
+  "day": "2026-10-07",
+  "shift": {
+   "id": 3,
+   "status": "closed",
+   "openedBy": "Laura Giménez",
+   "openedAt": 1791370800000,
+   "closedBy": "Martín Sosa",
+   "closedAt": 1791417600000,
+   "openingNotes": null,
+   "closingNotes": "Se dio vuelto de más en una venta. Faltaron $500."
+  },
+  "cash": {
+   "openingCents": 2000000,
+   "cashSalesCents": 28120000,
+   "depositsCents": 0,
+   "withdrawalsCents": 1650000,
+   "expectedCents": 28470000,
+   "countedCents": 28420000,
+   "diffCents": -50000
+  },
+  "inventory": [
+   {
+    "productId": 1,
+    "name": "Empanada",
+    "category": "Empanadas",
+    "opening": 300,
+    "restock": 0,
+    "sold": 134,
+    "adjustments": 0,
+    "closingSystem": 166,
+    "closingCounted": 166,
+    "difference": 0
+   },
+   {
+    "productId": 2,
+    "name": "Pizza",
+    "category": "Pizzas",
+    "opening": 20,
+    "restock": 0,
+    "sold": 5,
+    "adjustments": 0,
+    "closingSystem": 15,
+    "closingCounted": 15,
+    "difference": 0
+   },
+   {
+    "productId": 3,
+    "name": "Medialuna",
+    "category": "Medialunas",
+    "opening": 250,
+    "restock": 0,
+    "sold": 190,
+    "adjustments": 0,
+    "closingSystem": 60,
+    "closingCounted": 60,
+    "difference": 0
+   },
+   {
+    "productId": 4,
+    "name": "Chipá",
+    "category": "Chipás",
+    "opening": 125,
+    "restock": 0,
+    "sold": 100,
+    "adjustments": 0,
+    "closingSystem": 25,
+    "closingCounted": 25,
+    "difference": 0
+   },
+   {
+    "productId": 5,
+    "name": "Criollito",
+    "category": "Criollitos",
+    "opening": 150,
+    "restock": 0,
+    "sold": 40,
+    "adjustments": 0,
+    "closingSystem": 110,
+    "closingCounted": 110,
+    "difference": 0
+   },
+   {
+    "productId": 6,
+    "name": "Alfajor",
+    "category": "Alfajores",
+    "opening": 200,
+    "restock": 0,
+    "sold": 67,
+    "adjustments": 0,
+    "closingSystem": 133,
+    "closingCounted": 133,
+    "difference": 0
+   },
+   {
+    "productId": 8,
+    "name": "Agua",
+    "category": "Bebidas",
+    "opening": 24,
+    "restock": 0,
+    "sold": 9,
+    "adjustments": 0,
+    "closingSystem": 15,
+    "closingCounted": 15,
+    "difference": 0
+   },
+   {
+    "productId": 7,
+    "name": "Gaseosa",
+    "category": "Bebidas",
+    "opening": 36,
+    "restock": 0,
+    "sold": 14,
+    "adjustments": 0,
+    "closingSystem": 22,
+    "closingCounted": 22,
+    "difference": 0
+   }
+  ],
+  "totals": {
+   "salesCount": 115,
+   "totalCents": 77120000,
+   "byMethod": {
+    "efectivo": 28120000,
+    "transferencia": 28270000,
+    "debito": 11010000,
+    "credito": 9720000
+   },
+   "countByMethod": {
+    "efectivo": 49,
+    "transferencia": 38,
+    "debito": 19,
+    "credito": 14
+   },
+   "digitalCents": 49000000,
+   "cashCents": 28120000,
+   "avgTicketCents": 670609,
+   "voidedCount": 0,
+   "products": [
+    {
+     "productId": 1,
+     "unitsLoose": 65,
+     "unitsPromo": 69,
+     "revenueLooseCents": 14300000,
+     "name": "Empanada",
+     "category": "Empanadas",
+     "unitsTotal": 134
+    },
+    {
+     "productId": 2,
+     "unitsLoose": 5,
+     "unitsPromo": 0,
+     "revenueLooseCents": 6750000,
+     "name": "Pizza",
+     "category": "Pizzas",
+     "unitsTotal": 5
+    },
+    {
+     "productId": 3,
+     "unitsLoose": 130,
+     "unitsPromo": 60,
+     "revenueLooseCents": 11700000,
+     "name": "Medialuna",
+     "category": "Medialunas",
+     "unitsTotal": 190
+    },
+    {
+     "productId": 4,
+     "unitsLoose": 100,
+     "unitsPromo": 0,
+     "revenueLooseCents": 7000000,
+     "name": "Chipá",
+     "category": "Chipás",
+     "unitsTotal": 100
+    },
+    {
+     "productId": 5,
+     "unitsLoose": 40,
+     "unitsPromo": 0,
+     "revenueLooseCents": 3200000,
+     "name": "Criollito",
+     "category": "Criollitos",
+     "unitsTotal": 40
+    },
+    {
+     "productId": 6,
+     "unitsLoose": 67,
+     "unitsPromo": 0,
+     "revenueLooseCents": 10050000,
+     "name": "Alfajor",
+     "category": "Alfajores",
+     "unitsTotal": 67
+    },
+    {
+     "productId": 8,
+     "unitsLoose": 9,
+     "unitsPromo": 0,
+     "revenueLooseCents": 1620000,
+     "name": "Agua",
+     "category": "Bebidas",
+     "unitsTotal": 9
+    },
+    {
+     "productId": 7,
+     "unitsLoose": 9,
+     "unitsPromo": 5,
+     "revenueLooseCents": 2250000,
+     "name": "Gaseosa",
+     "category": "Bebidas",
+     "unitsTotal": 14
+    }
+   ],
+   "promos": [
+    {
+     "name": "Combo 3 empanadas + gaseosa",
+     "qty": 5,
+     "revenueCents": 4300000
+    },
+    {
+     "name": "Combo 3 medialunas",
+     "qty": 20,
+     "revenueCents": 4800000
+    },
+    {
+     "name": "Docena de empanadas",
+     "qty": 1,
+     "revenueCents": 2400000
+    },
+    {
+     "name": "Media docena de empanadas",
+     "qty": 7,
+     "revenueCents": 8750000
+    }
+   ]
+  },
+  "cashMovements": [
+   {
+    "id": 4,
+    "type": "out",
+    "amountCents": 450000,
+    "reason": "Hielo y bolsas",
+    "createdAt": 1791382800000,
+    "userName": "Laura Giménez"
+   },
+   {
+    "id": 5,
+    "type": "out",
+    "amountCents": 1200000,
+    "reason": "Pago a proveedor de bebidas",
+    "createdAt": 1791403500000,
+    "userName": "Martín Sosa"
+   }
+  ]
+ },
+ "prevWeek": {
+  "from": 1791169200000,
+  "to": 1791774000000,
+  "fromYmd": "2026-10-05",
+  "toYmd": "2026-10-11",
+  "totals": {
+   "salesCount": 911,
+   "totalCents": 582050000,
+   "byMethod": {
+    "efectivo": 231000000,
+    "transferencia": 177910000,
+    "debito": 113000000,
+    "credito": 60140000
+   },
+   "digitalCents": 351050000,
+   "cashCents": 231000000,
+   "products": [
+    {
+     "productId": 1,
+     "unitsLoose": 499,
+     "unitsPromo": 516,
+     "revenueLooseCents": 109780000,
+     "name": "Empanada",
+     "category": "Empanadas",
+     "unitsTotal": 1015
+    },
+    {
+     "productId": 2,
+     "unitsLoose": 38,
+     "unitsPromo": 0,
+     "revenueLooseCents": 51300000,
+     "name": "Pizza",
+     "category": "Pizzas",
+     "unitsTotal": 38
+    },
+    {
+     "productId": 3,
+     "unitsLoose": 893,
+     "unitsPromo": 546,
+     "revenueLooseCents": 80370000,
+     "name": "Medialuna",
+     "category": "Medialunas",
+     "unitsTotal": 1439
+    },
+    {
+     "productId": 4,
+     "unitsLoose": 757,
+     "unitsPromo": 0,
+     "revenueLooseCents": 52990000,
+     "name": "Chipá",
+     "category": "Chipás",
+     "unitsTotal": 757
+    },
+    {
+     "productId": 5,
+     "unitsLoose": 303,
+     "unitsPromo": 0,
+     "revenueLooseCents": 24240000,
+     "name": "Criollito",
+     "category": "Criollitos",
+     "unitsTotal": 303
+    },
+    {
+     "productId": 6,
+     "unitsLoose": 507,
+     "unitsPromo": 0,
+     "revenueLooseCents": 76050000,
+     "name": "Alfajor",
+     "category": "Alfajores",
+     "unitsTotal": 507
+    },
+    {
+     "productId": 8,
+     "unitsLoose": 68,
+     "unitsPromo": 0,
+     "revenueLooseCents": 12240000,
+     "name": "Agua",
+     "category": "Bebidas",
+     "unitsTotal": 68
+    },
+    {
+     "productId": 7,
+     "unitsLoose": 66,
+     "unitsPromo": 40,
+     "revenueLooseCents": 16500000,
+     "name": "Gaseosa",
+     "category": "Bebidas",
+     "unitsTotal": 106
+    }
+   ],
+   "promos": [
+    {
+     "name": "Combo 3 empanadas + gaseosa",
+     "qty": 40,
+     "revenueCents": 34400000
+    },
+    {
+     "name": "Combo 3 medialunas",
+     "qty": 182,
+     "revenueCents": 43680000
+    },
+    {
+     "name": "Docena de empanadas",
+     "qty": 20,
+     "revenueCents": 48000000
+    },
+    {
+     "name": "Media docena de empanadas",
+     "qty": 26,
+     "revenueCents": 32500000
+    }
+   ]
+  },
+  "daily": [
+   {
+    "day": "2026-10-05",
+    "salesCount": 98,
+    "efectivo": 21550000,
+    "transferencia": 20950000,
+    "debito": 10510000,
+    "credito": 9550000,
+    "totalCents": 62560000
+   },
+   {
+    "day": "2026-10-06",
+    "salesCount": 120,
+    "efectivo": 29230000,
+    "transferencia": 22140000,
+    "debito": 11330000,
+    "credito": 7390000,
+    "totalCents": 70090000
+   },
+   {
+    "day": "2026-10-07",
+    "salesCount": 115,
+    "efectivo": 28120000,
+    "transferencia": 28270000,
+    "debito": 11010000,
+    "credito": 9720000,
+    "totalCents": 77120000
+   },
+   {
+    "day": "2026-10-08",
+    "salesCount": 120,
+    "efectivo": 33050000,
+    "transferencia": 25440000,
+    "debito": 16810000,
+    "credito": 4610000,
+    "totalCents": 79910000
+   },
+   {
+    "day": "2026-10-09",
+    "salesCount": 156,
+    "efectivo": 38360000,
+    "transferencia": 32680000,
+    "debito": 19180000,
+    "credito": 7850000,
+    "totalCents": 98070000
+   },
+   {
+    "day": "2026-10-10",
+    "salesCount": 169,
+    "efectivo": 44090000,
+    "transferencia": 29170000,
+    "debito": 22990000,
+    "credito": 12940000,
+    "totalCents": 109190000
+   },
+   {
+    "day": "2026-10-11",
+    "salesCount": 133,
+    "efectivo": 36600000,
+    "transferencia": 19260000,
+    "debito": 21170000,
+    "credito": 8080000,
+    "totalCents": 85110000
+   }
+  ],
+  "inventory": [
+   {
+    "productId": 1,
+    "name": "Empanada",
+    "category": "Empanadas",
+    "start": 0,
+    "restock": 1026,
+    "sold": 1015,
+    "adjustments": -2,
+    "end": 9
+   },
+   {
+    "productId": 2,
+    "name": "Pizza",
+    "category": "Pizzas",
+    "start": 0,
+    "restock": 79,
+    "sold": 38,
+    "adjustments": -1,
+    "end": 40
+   },
+   {
+    "productId": 3,
+    "name": "Medialuna",
+    "category": "Medialunas",
+    "start": 0,
+    "restock": 1448,
+    "sold": 1439,
+    "adjustments": 0,
+    "end": 9
+   },
+   {
+    "productId": 4,
+    "name": "Chipá",
+    "category": "Chipás",
+    "start": 0,
+    "restock": 766,
+    "sold": 757,
+    "adjustments": 0,
+    "end": 9
+   },
+   {
+    "productId": 5,
+    "name": "Criollito",
+    "category": "Criollitos",
+    "start": 0,
+    "restock": 312,
+    "sold": 303,
+    "adjustments": 0,
+    "end": 9
+   },
+   {
+    "productId": 6,
+    "name": "Alfajor",
+    "category": "Alfajores",
+    "start": 0,
+    "restock": 516,
+    "sold": 507,
+    "adjustments": 0,
+    "end": 9
+   },
+   {
+    "productId": 8,
+    "name": "Agua",
+    "category": "Bebidas",
+    "start": 0,
+    "restock": 89,
+    "sold": 68,
+    "adjustments": 0,
+    "end": 21
+   },
+   {
+    "productId": 7,
+    "name": "Gaseosa",
+    "category": "Bebidas",
+    "start": 0,
+    "restock": 120,
+    "sold": 106,
+    "adjustments": 0,
+    "end": 14
+   }
+  ],
+  "shifts": [
+   {
+    "id": 1,
+    "openedAt": 1791198000000,
+    "closedAt": 1791244800000,
+    "openedBy": "Laura Giménez",
+    "closedBy": "Martín Sosa",
+    "salesCount": 98,
+    "totalCents": 62560000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 21900000,
+    "countedCashCents": 21900000,
+    "cashDiffCents": 0
+   },
+   {
+    "id": 2,
+    "openedAt": 1791284400000,
+    "closedAt": 1791331200000,
+    "openedBy": "Laura Giménez",
+    "closedBy": "Camila Ríos",
+    "salesCount": 120,
+    "totalCents": 70090000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 30780000,
+    "countedCashCents": 30780000,
+    "cashDiffCents": 0
+   },
+   {
+    "id": 3,
+    "openedAt": 1791370800000,
+    "closedAt": 1791417600000,
+    "openedBy": "Laura Giménez",
+    "closedBy": "Martín Sosa",
+    "salesCount": 115,
+    "totalCents": 77120000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 28470000,
+    "countedCashCents": 28420000,
+    "cashDiffCents": -50000
+   },
+   {
+    "id": 4,
+    "openedAt": 1791457200000,
+    "closedAt": 1791504000000,
+    "openedBy": "Camila Ríos",
+    "closedBy": "Martín Sosa",
+    "salesCount": 120,
+    "totalCents": 79910000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 34600000,
+    "countedCashCents": 34600000,
+    "cashDiffCents": 0
+   },
+   {
+    "id": 5,
+    "openedAt": 1791543600000,
+    "closedAt": 1791590400000,
+    "openedBy": "Laura Giménez",
+    "closedBy": "Camila Ríos",
+    "salesCount": 156,
+    "totalCents": 98070000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 38710000,
+    "countedCashCents": 38720000,
+    "cashDiffCents": 10000
+   },
+   {
+    "id": 6,
+    "openedAt": 1791630000000,
+    "closedAt": 1791676800000,
+    "openedBy": "Martín Sosa",
+    "closedBy": "Camila Ríos",
+    "salesCount": 169,
+    "totalCents": 109190000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 45640000,
+    "countedCashCents": 45640000,
+    "cashDiffCents": 0
+   },
+   {
+    "id": 7,
+    "openedAt": 1791716400000,
+    "closedAt": 1791763200000,
+    "openedBy": "Laura Giménez",
+    "closedBy": "Martín Sosa",
+    "salesCount": 133,
+    "totalCents": 85110000,
+    "openingCashCents": 2000000,
+    "expectedCashCents": 36950000,
+    "countedCashCents": 36950000,
+    "cashDiffCents": 0
+   }
+  ],
+  "hours": [
+   {
+    "userId": 3,
+    "userName": "Camila Ríos",
+    "ms": 85740000,
+    "entries": 4,
+    "incomplete": 0,
+    "hours": 23.82
+   },
+   {
+    "userId": 1,
+    "userName": "Laura Giménez",
+    "ms": 147000000,
+    "entries": 5,
+    "incomplete": 0,
+    "hours": 40.83
+   },
+   {
+    "userId": 2,
+    "userName": "Martín Sosa",
+    "ms": 104520000,
+    "entries": 5,
+    "incomplete": 0,
+    "hours": 29.03
+   }
+  ]
+ },
+ "today": {
+  "day": "2026-10-13",
+  "mode": "open",
+  "shiftId": 9,
+  "salesCount": 49
+ },
+ "catalog": {
+  "products": [
+   {
+    "name": "Empanada",
+    "category": "Empanadas",
+    "price_cents": 220000,
+    "low_stock_threshold": 24
+   },
+   {
+    "name": "Pizza",
+    "category": "Pizzas",
+    "price_cents": 1350000,
+    "low_stock_threshold": 3
+   },
+   {
+    "name": "Medialuna",
+    "category": "Medialunas",
+    "price_cents": 90000,
+    "low_stock_threshold": 20
+   },
+   {
+    "name": "Chipá",
+    "category": "Chipás",
+    "price_cents": 70000,
+    "low_stock_threshold": 20
+   },
+   {
+    "name": "Criollito",
+    "category": "Criollitos",
+    "price_cents": 80000,
+    "low_stock_threshold": 20
+   },
+   {
+    "name": "Alfajor",
+    "category": "Alfajores",
+    "price_cents": 150000,
+    "low_stock_threshold": 10
+   },
+   {
+    "name": "Gaseosa",
+    "category": "Bebidas",
+    "price_cents": 250000,
+    "low_stock_threshold": 6
+   },
+   {
+    "name": "Agua",
+    "category": "Bebidas",
+    "price_cents": 180000,
+    "low_stock_threshold": 19
+   }
+  ],
+  "promos": [
+   {
+    "name": "Docena de empanadas",
+    "price_cents": 2400000,
+    "items": [
+     {
+      "name": "Empanada",
+      "qty": 12
+     }
+    ]
+   },
+   {
+    "name": "Media docena de empanadas",
+    "price_cents": 1250000,
+    "items": [
+     {
+      "name": "Empanada",
+      "qty": 6
+     }
+    ]
+   },
+   {
+    "name": "Combo 3 medialunas",
+    "price_cents": 240000,
+    "items": [
+     {
+      "name": "Medialuna",
+      "qty": 3
+     }
+    ]
+   },
+   {
+    "name": "Combo 3 empanadas + gaseosa",
+    "price_cents": 860000,
+    "items": [
+     {
+      "name": "Empanada",
+      "qty": 3
+     },
+     {
+      "name": "Gaseosa",
+      "qty": 1
+     }
+    ]
+   }
+  ]
+ },
+ "stockNow": [
+  {
+   "name": "Empanada",
+   "stock": 101,
+   "low_stock_threshold": 24
+  },
+  {
+   "name": "Pizza",
+   "stock": 41,
+   "low_stock_threshold": 3
+  },
+  {
+   "name": "Medialuna",
+   "stock": 166,
+   "low_stock_threshold": 20
+  },
+  {
+   "name": "Chipá",
+   "stock": 86,
+   "low_stock_threshold": 20
+  },
+  {
+   "name": "Criollito",
+   "stock": 30,
+   "low_stock_threshold": 20
+  },
+  {
+   "name": "Alfajor",
+   "stock": 59,
+   "low_stock_threshold": 10
+  },
+  {
+   "name": "Gaseosa",
+   "stock": 16,
+   "low_stock_threshold": 6
+  },
+  {
+   "name": "Agua",
+   "stock": 16,
+   "low_stock_threshold": 19
+  }
+ ]
+}

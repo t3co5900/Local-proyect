@@ -256,7 +256,8 @@ export function openDb(file) {
   db.exec('PRAGMA busy_timeout = 5000');
   if (file !== ':memory:') {
     db.exec('PRAGMA journal_mode = WAL');
-    db.exec('PRAGMA synchronous = NORMAL');
+    // FULL: cada venta confirmada se graba en disco antes de responder (un corte de luz no se la lleva)
+    db.exec('PRAGMA synchronous = FULL');
   }
   migrate(db);
   return db;

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import { createApp } from './app.js';
 import { loadConfig } from './config.js';
 import { createContext } from './context.js';
@@ -12,7 +13,10 @@ const db = openDb(config.dbFile);
 const ctx = createContext({ config, db });
 const app = createApp(ctx);
 
+const pidFile = path.join(config.dataDir, 'mrcook.pid');
+
 const server = app.listen(config.port, config.host, () => {
+  fs.writeFileSync(pidFile, String(process.pid)); // lo usa "Detener Mr.Cook.bat"
   const shown = config.host === '0.0.0.0' ? 'localhost' : config.host;
   console.log('');
   console.log('  Mr.Cook POS');
@@ -49,6 +53,7 @@ setTimeout(maintenance, 20_000).unref();
 setInterval(maintenance, 30 * 60_000).unref();
 
 function shutdown() {
+  try { fs.rmSync(pidFile, { force: true }); } catch { /* da igual */ }
   server.close(() => {
     try { db.close(); } catch { /* ya cerrada */ }
     process.exit(0);
