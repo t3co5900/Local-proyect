@@ -1,0 +1,32 @@
+{
+  "name": "mrcook-pos",
+  "version": "0.1.0",
+  "description": "Mr.Cook POS: caja, turnos, stock, fichaje y reportes. Funciona 100% local.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev:server": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "dev:web": "vite --config web/vite.config.js",
+    "build": "vite build --config web/vite.config.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 \"server/test/**/*.test.js\"",
+    "package:win": "node scripts/package-windows.mjs"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0",
+    "pdfkit": "^0.20.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@fontsource/nunito": "^5.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "playwright-core": "^1.64.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vite": "^8.3.4"
+  }
+}
