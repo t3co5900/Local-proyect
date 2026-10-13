@@ -39,7 +39,7 @@ npm start            # http://127.0.0.1:3737
 npm run dev:server   # API en :3737
 npm run dev:web      # interfaz en :5173 (proxy a la API)
 
-npm test             # 41 tests del servidor
+npm test             # 42 tests del servidor
 node scripts/e2e-smoke.mjs        # recorrido completo en un navegador real (necesita Chromium)
 node scripts/e2e-mercadopago.mjs  # cobro automático contra un Mercado Pago simulado
 npm run package:win  # arma release/MrCook-POS-<versión>-win-x64.zip

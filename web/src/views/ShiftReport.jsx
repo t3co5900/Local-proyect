@@ -40,8 +40,8 @@ export default function ShiftReport({ id }) {
       <div className="row between wrap no-print">
         <a href="#/caja" className="btn ghost small">← Caja</a>
         <div className="row wrap">
-          <button className="btn" onClick={() => dl('xlsx')} disabled={!!busy}>{busy === 'xlsx' ? 'Generando…' : 'Descargar Excel'}</button>
-          <button className="btn" onClick={() => dl('pdf')} disabled={!!busy}>{busy === 'pdf' ? 'Generando…' : 'Descargar PDF'}</button>
+          <button className="btn" onClick={() => dl('xlsx')} disabled={!!busy || (open && r.cash.expectedCents == null)} title={open && r.cash.expectedCents == null ? 'Se puede descargar al cerrar el turno' : undefined}>{busy === 'xlsx' ? 'Generando…' : 'Descargar Excel'}</button>
+          <button className="btn" onClick={() => dl('pdf')} disabled={!!busy || (open && r.cash.expectedCents == null)} title={open && r.cash.expectedCents == null ? 'Se puede descargar al cerrar el turno' : undefined}>{busy === 'pdf' ? 'Generando…' : 'Descargar PDF'}</button>
           <button className="btn dark" onClick={() => window.print()}>Imprimir</button>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function ShiftReport({ id }) {
             ['+ Ventas en efectivo', money2(r.cash.cashSalesCents)],
             ['+ Ingresos de efectivo', money2(r.cash.depositsCents)],
             ['− Retiros de efectivo', money2(r.cash.withdrawalsCents)],
-            ['Efectivo esperado en caja', money2(r.cash.expectedCents), 'hl'],
+            ['Efectivo esperado en caja', r.cash.expectedCents == null ? 'Se muestra al cerrar el turno' : money2(r.cash.expectedCents), 'hl'],
             ...(open ? [['Efectivo contado', 'Turno abierto']] : [
               ['Efectivo contado al cerrar', money2(r.cash.countedCents)],
               ['Diferencia (contado − esperado)', money2(r.cash.diffCents), `hl ${r.cash.diffCents < 0 ? 'neg' : ''}`],

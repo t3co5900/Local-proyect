@@ -234,9 +234,12 @@ export function createApp(ctx) {
   });
 
   // turnos y caja
-  api.get('/shift/current', (_req, res) => {
+  api.get('/shift/current', (req, res) => {
     const s = getOpenShift(ctx);
-    res.json(s ? { shift: openShiftSummary(), live: liveSummary(ctx, s.id) } : { shift: null });
+    if (!s) return res.json({ shift: null });
+    const live = liveSummary(ctx, s.id);
+    if (hideExpectedCash(req.user, true)) live.cash = { ...live.cash, expectedCents: null };
+    res.json({ shift: openShiftSummary(), live });
   });
   api.post('/shifts/open', (req, res) => {
     const b = parse(z.object({
@@ -259,6 +262,12 @@ export function createApp(ctx) {
     res.status(201).json(shifts.addCashMovement(ctx, req.user, b));
   });
 
+  /**
+   * Mientras el turno está abierto, a un cajero no se le muestra cuánto efectivo "debería haber":
+   * así cuenta la caja sin ver ese número (la encargada sí lo ve). Después del cierre se muestra.
+   */
+  const hideExpectedCash = (user, open) => open && user.role !== 'admin';
+
   const canViewShift = (user, shiftId) => {
     if (user.role === 'admin') return true;
     const s = shifts.getShift(ctx, shiftId);
@@ -275,13 +284,22 @@ export function createApp(ctx) {
     const mine = req.user.role === 'admin' ? all : all.filter((s) => s.openedById === req.user.id || s.closedById === req.user.id);
     res.json({ shifts: mine });
   });
-  api.get('/shifts/:id/report', shiftAccess, (req, res) => res.json(shiftReport(ctx, id(req.params.id))));
+  api.get('/shifts/:id/report', shiftAccess, (req, res) => {
+    const rep = shiftReport(ctx, id(req.params.id));
+    if (hideExpectedCash(req.user, rep.shift.status === 'open')) rep.cash = { ...rep.cash, expectedCents: null, diffCents: null };
+    res.json(rep);
+  });
+  const noOpenExport = (req, rep) => {
+    if (hideExpectedCash(req.user, rep.shift.status === 'open')) throw forbidden('El archivo para descargar se genera al cerrar el turno.', 'shift_open');
+  };
   api.get('/shifts/:id/export.xlsx', shiftAccess, async (req, res) => {
     const rep = shiftReport(ctx, id(req.params.id));
+    noOpenExport(req, rep);
     download(res, { buffer: await shiftWorkbook(rep), type: XLSX, filename: `MrCook_Cierre-turno-${rep.shift.id}.xlsx` });
   });
   api.get('/shifts/:id/export.pdf', shiftAccess, async (req, res) => {
     const rep = shiftReport(ctx, id(req.params.id));
+    noOpenExport(req, rep);
     download(res, { buffer: await shiftPdf(rep, { detail: req.query.detail === '1' }), type: 'application/pdf', filename: `MrCook_Cierre-turno-${rep.shift.id}.pdf` });
   });
 

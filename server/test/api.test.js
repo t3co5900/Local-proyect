@@ -180,7 +180,8 @@ describe('API: venta completa, anulación y exportaciones', () => {
 
     const live = (await cajero.get('/api/shift/current')).json;
     assert.equal(live.live.totals.totalCents, pesos(30600));
-    assert.equal(live.live.cash.expectedCents, pesos(10000 + 24000));
+    assert.equal(live.live.cash.expectedCents, null, 'el cajero no ve el efectivo esperado con el turno abierto');
+    assert.equal((await admin.get('/api/shift/current')).json.live.cash.expectedCents, pesos(10000 + 24000), 'la encargada sí lo ve');
     assert.equal(get(t.ctx.db, 'SELECT stock FROM products WHERE id=?', emp.id).stock, 85);
 
     // cajero solo, no puede anular
@@ -205,6 +206,32 @@ describe('API: venta completa, anulación y exportaciones', () => {
     assert.equal((await cajero.post('/api/sales', {
       items: [{ kind: 'product', id: emp.id, qty: 1 }], payments: [{ method: 'efectivo', amountCents: pesos(2200) }],
     })).status, 409);
+  });
+
+  test('el efectivo esperado no se muestra a un cajero mientras el turno está abierto, y sí tras el cierre', async () => {
+    const st = testContext();
+    const s2 = await startServer(st);
+    try {
+      const caj = s2.client(); const adm = s2.client();
+      await caj.login('Carlos Pérez', st.cajeroPin);
+      await adm.login('Ana Admin', st.adminPin);
+      await caj.post('/api/shifts/open', { openingCashCents: pesos(10000) });
+      const shiftId = get(st.ctx.db, 'SELECT id FROM shifts').id;
+      // cajero: ni el resumen en vivo, ni el reporte, ni los archivos del turno abierto muestran el esperado
+      assert.equal((await caj.get('/api/shift/current')).json.live.cash.expectedCents, null);
+      assert.equal((await caj.get(`/api/shifts/${shiftId}/report`)).json.cash.expectedCents, null);
+      assert.equal((await caj.get(`/api/shifts/${shiftId}/export.pdf`)).status, 403);
+      assert.equal((await caj.get(`/api/shifts/${shiftId}/export.xlsx`)).status, 403);
+      // encargada: lo ve siempre
+      assert.equal((await adm.get('/api/shift/current')).json.live.cash.expectedCents, pesos(10000));
+      assert.equal((await adm.get(`/api/shifts/${shiftId}/export.xlsx`)).status, 200);
+      // tras el cierre, el cajero que lo cerró ve el resultado completo
+      await caj.post('/api/shifts/close', { countedCashCents: pesos(9800) });
+      const rep = (await caj.get(`/api/shifts/${shiftId}/report`)).json;
+      assert.equal(rep.cash.expectedCents, pesos(10000));
+      assert.equal(rep.cash.diffCents, -pesos(200));
+      assert.equal((await caj.get(`/api/shifts/${shiftId}/export.pdf`)).status, 200);
+    } finally { await s2.close(); }
   });
 
   test('Excel del cierre: hojas, valores y fórmulas', async () => {
