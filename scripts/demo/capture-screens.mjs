@@ -117,7 +117,7 @@ try {
     await page.getByRole('link', { name: 'Fichar entrada / salida' }).click();
     await page.getByLabel('Usuario').fill('Martín Sosa');
     await page.getByLabel('Usuario').press('Enter');
-    await page.keyboard.type('015');
+    await page.keyboard.type('01');
     await snap(page, 'fichar-publico', 'Pantalla de fichaje (entrada/salida), a la que se llega sin abrir turno.');
     await ctx.close();
 
@@ -213,6 +213,7 @@ try {
     await page.locator('.recent-item').first().getByText('anular').click();
     await page.getByLabel('Motivo').fill('Se equivocó de producto');
     await page.getByLabel('Usuario del encargado').fill('Laura Giménez');
+    await page.getByLabel('Usuario del encargado').press('Enter');
     await page.keyboard.type('05');
     await snap(page, 'anular-cajero', 'Anular una venta: el cajero necesita que la encargada ponga su usuario y su código.');
     await page.getByRole('button', { name: 'No anular' }).click();

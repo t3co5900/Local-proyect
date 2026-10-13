@@ -3,7 +3,7 @@
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 /** Texto con **negrita** y saltos de línea. */
-export const t = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+export const t = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(«?-(?:wal|shm)»?)/g, '<span class="nw">$1</span>').replace(/\n/g, '<br>');
 
 export class DeckError extends Error {}
 
@@ -13,8 +13,9 @@ const BOX = { shot: [644, 520], shotWide: [1152, 452], two: [562, 410], twoTall:
 export function makeRenderer({ manifest, logos = { black: 'logo-black.png', white: 'logo-white.png' } }) {
   const byId = new Map(manifest.map((m) => [m.id, m]));
 
-  function image(spec, [maxW, maxH]) {
+  function imageSize(spec, defaultBox) {
     if (!spec || !spec.id) throw new DeckError('Falta la imagen (image.id).');
+    const [maxW, maxH] = spec.box || defaultBox;
     const m = byId.get(spec.id);
     if (!m) throw new DeckError(`Imagen inexistente en el manifiesto: "${spec.id}"`);
     // crop: zona de la imagen a mostrar, en % ({x,y,w,h}); sirve para ampliar lo importante
@@ -23,8 +24,11 @@ export function makeRenderer({ manifest, logos = { black: 'logo-black.png', whit
     const srcW = (m.width * c.w) / 100;
     const srcH = (m.height * c.h) / 100;
     const k = Math.min(maxW / srcW, maxH / srcH, 1.8);
-    const w = Math.round(srcW * k);
-    const h = Math.round(srcH * k);
+    return { m, c, k, w: Math.round(srcW * k), h: Math.round(srcH * k) };
+  }
+
+  function image(spec, defaultBox) {
+    const { m, c, k, w, h } = imageSize(spec, defaultBox);
     const iw = (m.width * k).toFixed(1);
     const ih = (m.height * k).toFixed(1);
     const marks = (spec.marks || []).map((mk) => `<span class="mk" style="left:${Number(mk.x)}%;top:${Number(mk.y)}%">${esc(mk.n)}</span>`).join('');
@@ -56,7 +60,7 @@ export function makeRenderer({ manifest, logos = { black: 'logo-black.png', whit
         return `<div class="dia"><div class="deq" style="--cols:${cols}"><div class="hd"><div></div>${d.headers.map((h) => `<div>${t(h)}</div>`).join('')}</div>${d.rows.map((r) => `<div class="rw"><div class="nm">${t(r.label)}</div>${r.values.map((v, i) => `<div class="v ${i === r.values.length - 1 ? 'last' : ''}">${esc(v)}</div>`).join('')}</div>`).join('')}</div>${d.note ? callout({ kind: 'tip', text: d.note }) : ''}</div>`;
       }
       case 'flow':
-        return `<div class="dia"><div class="dflow">${d.rows.map((r) => `<div class="drow ${esc(r.tone || '')}"><div class="lb">${t(r.label)}</div><div class="bx">${r.boxes.map((b) => `<div class="b"><div class="ico">${esc(b.icon || '')}</div><h4>${t(b.title)}</h4><p>${t(b.text || '')}</p></div>`).join('')}</div></div>`).join('')}</div></div>`;
+        return `<div class="dia"><div class="dflow">${d.rows.map((r) => `<div class="drow ${esc(r.tone || '')}"><div class="lb">${t(r.label)}</div><div class="bx">${r.boxes.map((b) => `<div class="b${b.noArrow ? ' na' : ''}"><div class="ico">${esc(b.icon || '')}</div><h4>${t(b.title)}</h4><p>${t(b.text || '')}</p></div>`).join('')}</div></div>`).join('')}</div></div>`;
       case 'architecture': {
         const a = d.boxes || {};
         const box = (k, def, cls = '') => `<div class="ab ${cls}"><div class="ico">${esc(a[k]?.icon ?? def.icon)}</div><h4>${t(a[k]?.title ?? def.title)}</h4><p>${t(a[k]?.text ?? def.text)}</p></div>`;
@@ -92,9 +96,16 @@ export function makeRenderer({ manifest, logos = { black: 'logo-black.png', whit
     title: (s, p) => frame(s, p, true, `<div class="cover"><div class="l"><img class="logo" src="${logos.white}" alt="Mr.Cook"><div class="kick">${t(s.kicker || '')}</div><h1>${t(s.title)}</h1><div class="sub">${t(s.subtitle || '')}</div></div><div class="blob"></div><div class="blob-text">${t(s.badge || '')}</div></div>`),
     section: (s, p) => frame(s, p, true, `<div class="sec"><div class="big">${esc(s.number)}</div><div><h1>${t(s.title)}</h1><p>${t(s.subtitle || '')}</p></div></div>`),
     text: (s, p) => frame(s, p, false, body(s, `${lead(s.lead)}${bullets(s.bullets)}${callout(s.callout)}`)),
-    shot: (s, p) => frame(s, p, false, body(s, `<div class="cols ${s.side === 'left' ? 'shot-r' : 'shot'}"><div class="txt">${lead(s.lead)}${steps(s.steps)}${bullets(s.bullets)}${callout(s.callout)}</div><div class="imgbox">${image(s.image, BOX.shot)}</div></div>`)),
-    'shot-wide': (s, p) => frame(s, p, false, body(s, `${s.lead ? lead(s.lead) : ''}<div class="imgbox" style="flex:1">${image(s.image, s.lead ? [1152, 392] : BOX.shotWide)}</div>${s.caption ? `<div class="cap" style="margin-top:0">${t(s.caption)}</div>` : ''}`)),
-    'two-shots': (s, p) => frame(s, p, false, body(s, `${s.lead ? lead(s.lead) : ''}<div class="two">${[s.left, s.right].map((x) => `<div><div class="imgbox">${image(x.image, s.lead || s.callout ? BOX.twoTall : BOX.two)}</div><div class="cap">${t(x.caption || '')}</div></div>`).join('')}</div>${callout(s.callout)}`)),
+    shot: (s, p) => frame(s, p, false, body(s, `<div class="cols ${s.side === 'left' ? 'shot-r' : 'shot'}"><div class="txt"${s.textWidth ? ` style="flex-basis:${Number(s.textWidth)}%"` : ''}>${lead(s.lead)}${steps(s.steps)}${bullets(s.bullets)}${callout(s.callout)}</div><div class="imgbox">${image(s.image, BOX.shot)}</div></div>`)),
+    'shot-wide': (s, p) => frame(s, p, false, body(s, `${s.lead ? lead(s.lead) : ''}<div class="imgbox" style="flex:1">${image(s.image, s.lead ? [1152, 392] : BOX.shotWide)}</div>${s.caption ? `<div class="cap" style="margin-top:0">${t(s.caption)}</div>` : ''}${callout(s.callout)}`)),
+    'two-shots': (s, p) => {
+      const split = s.split || [1, 1];
+      const colW = (i) => Math.floor(((1152 - 28) * split[i]) / (split[0] + split[1]));
+      const boxFor = (i) => (s.stack ? [s.stackW || 800, s.stackH || 230] : [colW(i), (s.lead || s.callout ? BOX.twoTall : BOX.two)[1]]);
+      const boxH = s.stack ? 0 : Math.max(...[s.left, s.right].map((x, i) => imageSize(x.image, boxFor(i)).h));
+      const col = (x, i) => `<div style="flex:${split[i]}"><div class="imgbox"${boxH ? ` style="height:${boxH}px;flex:none"` : ''}>${image(x.image, boxFor(i))}</div><div class="cap">${t(x.caption || '')}</div></div>`;
+      return frame(s, p, false, body(s, `${s.lead ? lead(s.lead) : ''}<div class="two${s.stack ? ' stack' : ''}">${[s.left, s.right].map(col).join('')}</div>${callout(s.callout)}`));
+    },
     example: (s, p) => {
       const tb = s.table;
       const table = tb ? `<table class="ex${tb.rows.length >= 7 ? ' dense' : ''}"><thead><tr>${tb.headers.map((h, i) => `<th class="${tb.align?.[i] === 'r' ? 'r' : ''}">${t(h)}</th>`).join('')}</tr></thead><tbody>${tb.rows.map((r) => `<tr class="${r.total ? 'tot' : ''}">${(r.cells || r).map((c, i) => `<td class="${tb.align?.[i] === 'r' ? 'r' : ''} ${String(c).startsWith('-') && tb.align?.[i] === 'r' ? 'neg' : ''}">${t(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '';

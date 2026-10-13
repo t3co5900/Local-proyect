@@ -25,7 +25,7 @@ export default function TimeClock() {
       <div className="grid cols-2" style={{ alignItems: 'start' }}>
         <div className="card stack">
           <h2>Fichar entrada o salida</h2>
-          <Field label="Usuario">{(id) => <input id={id} className="input" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="off" />}</Field>
+          <Field label="Usuario">{(id) => <input id={id} className="input" value={username} onChange={(e) => setUsername(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }} autoComplete="off" />}</Field>
           <PinPad value={pin} onChange={setPin} onSubmit={() => {}} busy={busy} submitLabel="" />
           <div className="grid cols-2">
             <button className="btn big" disabled={busy || pin.length < 4} onClick={() => punch('in')}>Entrada</button>

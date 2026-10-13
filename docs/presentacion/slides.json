@@ -10,7 +10,7 @@
  {
   "id": "a02-agenda",
   "layout": "agenda",
-  "section": "Qué es y cómo es un día",
+  "section": "Índice",
   "title": "Lo que vas a ver",
   "lead": "Seis partes cortas, con capturas de un local de ejemplo."
  },
@@ -21,7 +21,7 @@
   "number": "1",
   "title": "Qué es y cómo es un día",
   "subtitle": "Qué hace el programa y cómo se usa en un día.",
-  "agenda": "Qué es, un día típico, cómo se ingresa y cómo se abre el turno"
+  "agenda": "Qué es, un día típico, cómo se ingresa, los roles y cómo se abre el turno"
  },
  {
   "id": "a04-que-es",
@@ -34,7 +34,7 @@
    {
     "icon": "🛒",
     "heading": "Vender y cobrar",
-    "text": "Productos y promos. Se cobra en efectivo (con vuelto), transferencia, débito o crédito."
+    "text": "Productos y promos. Se cobra en efectivo (con vuelto), transferencia o QR, débito o crédito."
    },
    {
     "icon": "💵",
@@ -59,12 +59,12 @@
    {
     "icon": "💾",
     "heading": "Copias de seguridad",
-    "text": "Con el programa prendido, guarda solo una copia por día y un resumen por semana."
+    "text": "Con el programa prendido, guarda automáticamente una copia por día y un resumen por semana."
    }
   ],
   "callout": {
    "kind": "ok",
-   "text": "Funciona **sin internet** (salvo la confirmación automática de Mercado Pago y Drive). No factura ni imprime tickets."
+   "text": "Funciona **sin internet**: solo la necesitás para la confirmación automática de Mercado Pago y para subir copias a Google Drive."
   }
  },
  {
@@ -89,7 +89,7 @@
     {
      "icon": "🛒",
      "title": "Vendés y cobrás",
-     "text": "Armás el pedido y cobrás: efectivo, transferencia, débito o crédito."
+     "text": "Armás el pedido y cobrás: efectivo, transferencia / QR, débito o crédito."
     },
     {
      "icon": "🧾",
@@ -143,8 +143,8 @@
     },
     {
      "n": 2,
-     "x": 67.8,
-     "y": 42.7
+     "x": 92.2,
+     "y": 47.7
     }
    ]
   }
@@ -193,7 +193,7 @@
    },
    {
     "n": 2,
-    "text": "**Efectivo inicial** (fondo de caja): los billetes y monedas. Ej: $20.000."
+    "text": "**Efectivo inicial** (fondo de cambio): los billetes y monedas que hay en la caja. Ej: $20.000."
    },
    {
     "n": 3,
@@ -238,7 +238,7 @@
   "number": "2",
   "title": "Vender y cobrar",
   "subtitle": "Cargar la venta, cobrarla como pague el cliente y anularla si hace falta.",
-  "agenda": "Cobrar en efectivo, QR o tarjeta, y anular una venta"
+  "agenda": "Cobrar en efectivo, transferencia / QR o tarjeta, y anular una venta"
  },
  {
   "id": "b02-pantalla",
@@ -270,37 +270,48 @@
   },
   "image": {
    "id": "pos-inicio",
+   "crop": {
+    "x": 3.5,
+    "y": 7.5,
+    "w": 93.5,
+    "h": 82.9
+   },
+   "box": [
+    713,
+    520
+   ],
    "marks": [
     {
      "n": 1,
-     "x": 21.8,
-     "y": 19.2
+     "x": 21.4,
+     "y": 14.1
     },
     {
      "n": 2,
-     "x": 46.5,
-     "y": 33
+     "x": 46.0,
+     "y": 30.8
     },
     {
      "n": 3,
-     "x": 13.6,
-     "y": 53.9
+     "x": 14.2,
+     "y": 64.5
     },
     {
      "n": 4,
-     "x": 88,
-     "y": 14.2
+     "x": 90.4,
+     "y": 8.1
     }
    ]
-  }
+  },
+  "textWidth": 35
  },
  {
   "id": "b03-promos",
   "layout": "example",
   "section": "Vender y cobrar",
   "title": "Las promos",
-  "lead": "Una promo es un paquete a precio fijo. No hay descuentos a mano: se arman como promos.",
-  "story": "Un cliente pide una docena de empanadas. Tocás **Docena de empanadas** y queda en una sola línea. Precios de ejemplo.",
+  "lead": "Una promo es un paquete a precio fijo. No hay descuentos a mano.",
+  "story": "Un cliente pide una docena de empanadas. En la solapa **★ Promos** tocás **Docena de empanadas** y queda en una sola línea. Precios de ejemplo.",
   "table": {
    "headers": [
     "Qué se vende",
@@ -314,12 +325,12 @@
    ],
    "rows": [
     [
-     "12 empanadas sueltas",
+     "12 sueltas",
      "12 × $2.200",
      "$26.400"
     ],
     [
-     "Docena de empanadas (promo)",
+     "Docena (promo)",
      "precio fijo",
      "$24.000"
     ],
@@ -337,11 +348,15 @@
   "image": {
    "id": "pos-promos",
    "crop": {
-    "x": 3,
-    "y": 9,
-    "w": 63,
-    "h": 35
-   }
+    "x": 34.5,
+    "y": 23.2,
+    "w": 30.8,
+    "h": 19.6
+   },
+   "box": [
+    590,
+    470
+   ]
   }
  },
  {
@@ -349,7 +364,7 @@
   "layout": "example",
   "section": "Vender y cobrar",
   "title": "Cobrar en efectivo y dar el vuelto",
-  "lead": "Tocás Cobrar, elegís Efectivo y escribís con cuánto paga el cliente. Martín cobra 4 empanadas y 1 gaseosa; el cliente paga con $20.000. Precios de ejemplo.",
+  "lead": "Tocás **Cobrar**, elegís **Efectivo** y escribís con cuánto paga el cliente. Martín cobra 4 empanadas y 1 gaseosa; el cliente paga con $20.000. Precios de ejemplo.",
   "table": {
    "headers": [
     "Qué se vendió",
@@ -396,9 +411,9 @@
   "image": {
    "id": "cobro-efectivo",
    "crop": {
-    "x": 29,
+    "x": 29.6,
     "y": 1,
-    "w": 42,
+    "w": 40.8,
     "h": 98
    }
   }
@@ -448,8 +463,8 @@
     },
     {
      "n": 3,
-     "x": 50,
-     "y": 72.5
+     "x": 53,
+     "y": 76.6
     }
    ]
   }
@@ -475,7 +490,7 @@
    },
    {
     "n": 4,
-    "text": "Cobrás el resto. Recién ahí se registra la venta."
+    "text": "Tocás «Cobrar $8.500 · Débito»: la venta queda esperando el pago y se registra cuando se confirma."
    }
   ],
   "callout": {
@@ -519,7 +534,7 @@
   "layout": "diagram",
   "section": "Vender y cobrar",
   "title": "Cobro automático con Mercado Pago",
-  "lead": "Si el cliente paga con QR o tarjeta, el programa mira tu Mercado Pago y confirma solo. Probado solo con uno simulado: falta un cobro de prueba de $100.",
+  "lead": "Si el cliente paga con QR o tarjeta, el programa mira tu Mercado Pago y confirma solo. Hasta ahora solo se probó con un pago simulado: falta conectar tu Mercado Pago y hacer un cobro de prueba real de $100.",
   "diagram": {
    "kind": "flow",
    "rows": [
@@ -529,7 +544,7 @@
      "boxes": [
       {
        "icon": "🛒",
-       "title": "Tocás Cobrar",
+       "title": "Tocás «Cobrar»",
        "text": "Elegís Transferencia / QR, Débito o Crédito."
       },
       {
@@ -648,8 +663,8 @@
    "marks": [
     {
      "n": 1,
-     "x": 89.2,
-     "y": 17
+     "x": 80,
+     "y": 19
     },
     {
      "n": 2,
@@ -663,7 +678,7 @@
     },
     {
      "n": 4,
-     "x": 64,
+     "x": 67,
      "y": 55
     }
    ]
@@ -683,42 +698,45 @@
   "layout": "two-shots",
   "section": "La caja y el cierre",
   "title": "La caja durante el turno",
-  "lead": "En **Caja** ves cómo viene el turno: lo vendido, cómo te pagaron y los retiros de plata.",
+  "lead": "En **Caja** ves cómo viene el turno: lo vendido, cómo te pagaron y el efectivo que debería haber.",
   "left": {
    "image": {
     "id": "caja-encargada",
     "crop": {
-     "x": 50.2,
-     "y": 8,
-     "w": 48.3,
-     "h": 25.5
+     "x": 4.5,
+     "y": 20.5,
+     "w": 91,
+     "h": 38.5
     }
    },
-   "caption": "**Encargada** (Laura): ve el cuadro negro con la plata que **debería haber** en la caja."
+   "caption": "**Encargada** (Laura): ve lo vendido, cómo le pagaron y, en el cuadro negro, la plata que **debería haber** en la caja."
   },
   "right": {
    "image": {
     "id": "caja-cajero",
     "crop": {
-     "x": 50.2,
-     "y": 8,
-     "w": 48.3,
-     "h": 25.5
+     "x": 4.5,
+     "y": 20.5,
+     "w": 91,
+     "h": 13
     }
    },
-   "caption": "**Cajero** (Martín): en ese lugar ve cuántas ventas se anularon. El efectivo que debería haber no se le muestra: cuenta la caja sin ese número."
+   "caption": "**Cajero** (Martín): ve lo vendido y cuántas ventas se anularon. El efectivo que debería haber no se le muestra: cuenta la caja sin ese número."
   },
   "callout": {
    "kind": "tip",
-   "text": "Si sacás o ponés plata en la caja, anotalo en **Retiro / ingreso de efectivo**. Si no, el cierre no cuadra."
-  }
+   "text": "Si sacás o ponés plata en la caja, anotalo en «Retiro / ingreso de efectivo». Si no, el cierre no cuadra."
+  },
+  "stack": true,
+  "stackW": 820,
+  "stackH": 215
  },
  {
   "id": "c03-cerrar",
   "layout": "shot",
   "section": "La caja y el cierre",
   "title": "Cerrar el turno en 3 pasos",
-  "lead": "Tocá **Cerrar turno**. El programa te guía en 3 pasos; esta es la última pantalla y resume lo que contaste.",
+  "lead": "Tocá «Cerrar turno». El programa te guía en 3 pasos; esta es la última pantalla (de otro turno de ejemplo) y resume lo que contaste.",
   "steps": [
    {
     "n": 1,
@@ -730,12 +748,12 @@
    },
    {
     "n": 3,
-    "text": "Si hace falta, escribís una **observación** y tocás el botón rojo."
+    "text": "Si hace falta, escribís una **observación** y tocás «Cerrar turno definitivamente» (el botón rojo)."
    }
   ],
   "callout": {
    "kind": "warn",
-   "text": "Al tocar el botón rojo, el turno se cierra: ya no se puede vender en él."
+   "text": "Al tocar «Cerrar turno definitivamente», el turno se cierra: ya no se puede vender en él."
   },
   "image": {
    "id": "cerrar-3",
@@ -769,7 +787,7 @@
   "layout": "example",
   "section": "La caja y el cierre",
   "title": "El cierre del miércoles 7 de octubre",
-  "story": "El cierre suma lo cobrado con cada medio de pago. Abrió **Laura Giménez**, la encargada, y lo cerró **Martín Sosa**. (Datos de ejemplo.)",
+  "story": "El cierre suma lo cobrado con cada medio de pago. Abrió **Laura Giménez**, la encargada, y lo cerró **Martín Sosa**. Son 120 cobros en 115 ventas: 5 ventas se pagaron en partes. (Datos de ejemplo.)",
   "table": {
    "headers": [
     "Medio de pago",
@@ -785,44 +803,44 @@
     [
      "Efectivo",
      "49",
-     "$ 281.200"
+     "$281.200"
     ],
     [
      "Transferencia",
      "38",
-     "$ 282.700"
+     "$282.700"
     ],
     [
      "Débito",
      "19",
-     "$ 110.100"
+     "$110.100"
     ],
     [
      "Crédito",
      "14",
-     "$ 97.200"
+     "$97.200"
     ],
     [
      "**Subtotal digital**",
      "",
-     "**$ 490.000**"
+     "**$490.000**"
     ],
     [
      "**Subtotal efectivo**",
      "",
-     "**$ 281.200**"
+     "**$281.200**"
     ],
     {
      "total": true,
      "cells": [
       "TOTAL VENDIDO",
       "",
-      "$ 771.200"
+      "$771.200"
      ]
     }
    ]
   },
-  "takeaway": "Solo los **$ 281.200 de efectivo** pasan por el cajón.",
+  "takeaway": "Solo los **$281.200 de efectivo** pasan por el cajón.",
   "image": {
    "id": "cierre-cobros"
   }
@@ -832,7 +850,7 @@
   "layout": "example",
   "section": "La caja y el cierre",
   "title": "Control de caja: ¿cuadró la plata?",
-  "story": "Después compara la plata que **debería haber** con la que contó Martín. Este cuadro se ve al cerrar el turno.",
+  "story": "Después compara la plata que **debería haber** con la que contó Martín. Ese cuadro aparece recién cuando el cajero cuenta y cierra el turno.",
   "table": {
    "headers": [
     "Solo el efectivo (ejemplo)",
@@ -845,41 +863,41 @@
    "rows": [
     [
      "Fondo con el que se abrió la caja",
-     "$ 20.000"
+     "$20.000"
     ],
     [
      "+ Ventas en efectivo",
-     "$ 281.200"
+     "$281.200"
     ],
     [
      "+ Plata que se puso (ingresos)",
-     "$ 0"
+     "$0"
     ],
     [
      "− Plata que se sacó (retiros)",
-     "$ 16.500"
+     "$16.500"
     ],
     {
      "total": true,
      "cells": [
       "= Debería haber (esperado)",
-      "$ 284.700"
+      "$284.700"
      ]
     },
     [
      "Lo que contó Martín",
-     "$ 284.200"
+     "$284.200"
     ],
     {
      "total": true,
      "cells": [
       "Diferencia (faltante)",
-      "-$ 500"
+      "-$500"
      ]
     }
    ]
   },
-  "takeaway": "Faltaron **$ 500**: Martín anotó que dio vuelto de más en una venta.",
+  "takeaway": "Faltaron **$500**: Martín anotó que dio vuelto de más en una venta.",
   "image": {
    "id": "cierre-caja"
   }
@@ -889,15 +907,15 @@
   "layout": "two-shots",
   "section": "La caja y el cierre",
   "title": "Qué se vendió y con cuánto quedaste",
-  "lead": "Dos cuadros del cierre (datos de ejemplo): lo **vendido** y lo que **quedó** de cada producto.",
+  "lead": "Dos cuadros del cierre (datos de ejemplo): lo **vendido** y lo que **quedó** de cada producto. Se explican mejor en la parte 4 (Stock).",
   "left": {
    "image": {
     "id": "cierre-productos",
     "crop": {
      "x": 0,
-     "y": 7.8,
+     "y": 1.5,
      "w": 80,
-     "h": 58
+     "h": 31.4
     }
    },
    "caption": "**Productos vendidos.** Empanada: 65 sueltas + 69 dentro de promos (combos y docenas) = **134**."
@@ -907,17 +925,16 @@
     "id": "cierre-inventario",
     "crop": {
      "x": 0,
-     "y": 12,
+     "y": 3.5,
      "w": 74,
-     "h": 85
+     "h": 49.5
     }
    },
-   "caption": "**Inventario del turno.** Empanada: arrancó con 300, se vendieron 134, quedan **166**."
+   "caption": "**Inventario del turno.** Empanada: arrancó con 300, se vendieron 134, quedan **166**. Se muestran 3 de los 8 productos."
   },
-  "callout": {
-   "kind": "info",
-   "text": "Estos cuadros se explican mejor en la parte 4 (Stock). Datos de ejemplo."
-  }
+  "stack": true,
+  "stackW": 820,
+  "stackH": 230
  },
  {
   "id": "c07-excel-pdf",
@@ -960,7 +977,7 @@
   "section": "Stock, personal y reportes",
   "number": "4",
   "title": "Stock, personal y reportes",
-  "subtitle": "Cuánta mercadería hay, quién trabajó y cómo te fue en la semana.",
+  "subtitle": "Cuánta mercadería hay, quién trabajó\ny cómo te fue en la semana.",
   "agenda": "Mercadería, fichaje de tu equipo y reportes"
  },
  {
@@ -1024,16 +1041,15 @@
      ]
     }
    ],
-   "note": "Miércoles 7 de octubre, datos de ejemplo. La mercadería se cargó antes de abrir: por eso cuenta como Inicio."
-  },
-  "caption": "Vale para productos que controlan stock. Mermas y ajustes también suman o restan (ese día, ninguno)."
+   "note": "Miércoles 7 de octubre, datos de ejemplo (5 de los 8 productos). La mercadería se cargó antes de abrir: por eso cuenta como Inicio. Mermas y ajustes también suman o restan (ese día, ninguno)."
+  }
  },
  {
   "id": "d03-ingreso",
   "layout": "shot",
   "section": "Stock, personal y reportes",
   "title": "Cuando llega mercadería",
-  "lead": "Cuando llega el pedido: Inventario → «+ Ingreso de mercadería».",
+  "lead": "Cuando llega el pedido, entrá a **Inventario** → **«+ Ingreso de mercadería»**.",
   "steps": [
    {
     "n": 1,
@@ -1050,7 +1066,7 @@
   ],
   "callout": {
    "kind": "info",
-   "text": "Captura con datos de ejemplo. Antes de registrar, el programa suma: 5 productos · 895 unidades."
+   "text": "Captura de otro momento, con datos de ejemplo. Antes de registrar, el programa suma: 5 productos · 895 unidades."
   },
   "image": {
    "id": "inventario-ingreso",
@@ -1073,8 +1089,8 @@
     },
     {
      "n": 3,
-     "x": 80,
-     "y": 93
+     "x": 97,
+     "y": 90
     }
    ]
   }
@@ -1084,7 +1100,7 @@
   "layout": "shot-wide",
   "section": "Stock, personal y reportes",
   "title": "El stock de cada producto",
-  "lead": "En **Inventario → Stock actual** ves cuánto queda de cada producto. Productos y cantidades de ejemplo.",
+  "lead": "En **Inventario → Stock actual** ves cuánto queda de cada producto. Son datos de ejemplo de otro momento, por eso no coinciden con el cierre del miércoles.",
   "image": {
    "id": "inventario-stock",
    "crop": {
@@ -1115,37 +1131,67 @@
  },
  {
   "id": "d04-mermas",
-  "layout": "two-shots",
+  "layout": "shot",
   "section": "Stock, personal y reportes",
   "title": "Mermas y ajustes",
-  "lead": "Si algo se cae, se tira o vence, lo anotás y el stock se corrige.",
-  "left": {
-   "image": {
-    "id": "inventario-merma",
-    "crop": {
-     "x": 29,
-     "y": 18,
-     "w": 42,
-     "h": 64
-    }
+  "lead": "Si algo se cae, se tira o vence, lo anotás y el stock se corrige. Está en **Inventario → Ajuste / merma**.",
+  "steps": [
+   {
+    "n": 1,
+    "text": "Elegís **Merma** (se tiró, se cayó, venció) o **Ajuste** (corregir un conteo)."
    },
-   "caption": "Merma: se tiró, se cayó o venció. El motivo es obligatorio."
-  },
-  "right": {
-   "image": {
-    "id": "inventario-movimientos",
-    "crop": {
-     "x": 5,
-     "y": 41,
-     "w": 90,
-     "h": 33
-    }
+   {
+    "n": 2,
+    "text": "Elegís el producto y cuántas unidades."
    },
-   "caption": "Cada movimiento queda con fecha, cantidad y quién lo registró. Datos de ejemplo: solo ventas."
-  },
+   {
+    "n": 3,
+    "text": "Escribís el **motivo**: siempre es obligatorio."
+   },
+   {
+    "n": 4,
+    "text": "Tocás **Registrar**: el stock se corrige y queda anotado con fecha y quién lo hizo."
+   }
+  ],
   "callout": {
    "kind": "tip",
-   "text": "«Ajuste» sirve para corregir un conteo: se puede sumar o restar, y también pide motivo."
+   "text": "Un ajuste sirve para corregir un conteo: se puede sumar o restar, y también pide motivo."
+  },
+  "textWidth": 38,
+  "image": {
+   "id": "inventario-merma",
+   "crop": {
+    "x": 29.2,
+    "y": 18.8,
+    "w": 41.6,
+    "h": 62.6
+   },
+   "box": [
+    680,
+    520
+   ],
+   "marks": [
+    {
+     "n": 1,
+     "x": 93.8,
+     "y": 18.8
+    },
+    {
+     "n": 2,
+     "x": 86.1,
+     "y": 43.4
+    },
+    {
+     "n": 3,
+     "x": 91.0,
+     "y": 75.5
+    },
+    {
+     "n": 4,
+     "x": 94.5,
+     "y": 87.1
+    }
+   ]
   }
  },
  {
@@ -1158,13 +1204,13 @@
    "image": {
     "id": "fichar-publico",
     "crop": {
-     "x": 34,
+     "x": 34.6,
      "y": 39,
-     "w": 32,
+     "w": 30.8,
      "h": 49
     }
    },
-   "caption": "Escribís tu nombre y apellido, tocás tu código de 4 dígitos y elegís Entrada o Salida."
+   "caption": "Tocás tu código de 4 dígitos (antes, tu nombre y apellido) y elegís Entrada o Salida. Los botones se activan al completar el código."
   },
   "right": {
    "image": {
@@ -1188,7 +1234,7 @@
   "layout": "shot-wide",
   "section": "Stock, personal y reportes",
   "title": "Horas trabajadas",
-  "lead": "Solo la encargada lo ve. Elegís las fechas y ves las horas de cada persona. Datos de ejemplo, semana del 5 al 11 de octubre.",
+  "lead": "En **Fichaje** (solo lo ve la encargada) elegís las fechas y ves las horas de cada persona. Semana del 5 al 11 de octubre, datos de ejemplo.",
   "image": {
    "id": "fichaje-horas",
    "crop": {
@@ -1215,7 +1261,7 @@
     }
    ]
   },
-  "caption": "**1** Horas de cada persona (40.83 h son unas 40 h 50 min) · **2** «Sin salida»: cuántas veces alguien olvidó fichar la salida (acá, ninguna) · **3** «Corregir»: la encargada corrige esa hora."
+  "caption": "**1** Horas de cada persona: 40.83 h son unas 40 h 50 min (la pantalla usa punto) · **2** «Sin salida»: cuántas veces alguien olvidó fichar la salida (acá, ninguna) · **3** «Corregir»: la encargada corrige esa hora."
  },
  {
   "id": "d07-semana",
@@ -1244,14 +1290,14 @@
     }
    ]
   },
-  "caption": "**1** Miércoles 7: 115 ventas y $771.200, el mismo cierre de antes · **2** Semana del 5 al 11: $5.820.500 en 911 ventas."
+  "caption": "**1** Miércoles 7: 115 ventas y $771.200, el mismo total del cierre de ese día · **2** Semana del 5 al 11: $5.820.500 en 911 ventas."
  },
  {
   "id": "d08-excel",
   "layout": "two-shots",
   "section": "Stock, personal y reportes",
-  "title": "El resumen semanal que llega a tu Drive",
-  "lead": "Cada lunes se guarda una planilla de Excel con la semana anterior. También la armás cuando quieras en **Reportes → Descargar Excel del período**.",
+  "title": "El resumen semanal en Excel",
+  "lead": "Cada lunes se guarda en la PC una planilla de Excel con la semana anterior (y se sube a tu Drive si lo activaste). También la armás cuando quieras en **Reportes → Descargar Excel del período**.",
   "callout": {
    "kind": "info",
    "text": "Datos de ejemplo. Trae 7 hojas: Resumen, Por día, Productos, Stock, Ingresos de mercadería, Turnos y Fichajes."
@@ -1266,19 +1312,19 @@
      "h": 94
     }
    },
-   "caption": "Resumen: cobros por medio de pago, subtotal digital y efectivo, y total: $5.820.500 en 911 ventas."
+   "caption": "**Resumen** («2026-W41» = semana 41 del año): cobros por medio de pago, subtotal digital y efectivo, y total: $5.820.500 en 911 ventas."
   },
   "right": {
    "image": {
-    "id": "xlsx-semanal-dias",
+    "id": "xlsx-semanal-productos",
     "crop": {
-     "x": 1,
+     "x": 2,
      "y": 3,
-     "w": 98,
-     "h": 95
+     "w": 96,
+     "h": 66
     }
    },
-   "caption": "Por día: lo vendido cada día, separado por efectivo, transferencia, débito y crédito."
+   "caption": "**Productos**: unidades vendidas en la semana, sueltas y dentro de promos."
   }
  },
  {
@@ -1318,7 +1364,7 @@
      }
     ]
    },
-   "caption": "**1** Nombre y apellido\n**2** Rol: la encargada anula ventas, ve reportes y administra"
+   "caption": "**1** Nombre y apellido\n**2** Rol: **Cajero** vende y cobra; **Encargado** además anula ventas, ve reportes y administra"
   },
   "right": {
    "image": {
@@ -1337,8 +1383,8 @@
      },
      {
       "n": 4,
-      "x": 87,
-      "y": 46.7
+      "x": 95,
+      "y": 41
      }
     ]
    },
@@ -1346,7 +1392,7 @@
   },
   "callout": {
    "kind": "tip",
-   "text": "Conviene tener **dos encargadas**, por si una olvida su código. **Nuevo código** también libera a quien se bloqueó."
+   "text": "Conviene tener **dos encargadas**, por si una olvida su código. **Nuevo código** también destraba a quien quedó bloqueado por errores."
   }
  },
  {
@@ -1377,7 +1423,7 @@
      },
      {
       "n": 3,
-      "x": 66,
+      "x": 69,
       "y": 83.5
      }
     ]
@@ -1396,8 +1442,8 @@
     "marks": [
      {
       "n": 4,
-      "x": 70,
-      "y": 75.1
+      "x": 62,
+      "y": 15.5
      }
     ]
    },
@@ -1406,7 +1452,11 @@
   "callout": {
    "kind": "tip",
    "text": "Un gusto nuevo se suma con **+ Nuevo producto**. Lo que dejás de vender se desactiva, no se borra."
-  }
+  },
+  "split": [
+   42,
+   58
+  ]
  },
  {
   "id": "e04-mercadopago",
@@ -1425,11 +1475,11 @@
    },
    {
     "n": 3,
-    "text": "Tildá la casilla: los cobros por QR y tarjeta se confirman solos"
+    "text": "Tildá «Confirmar cobros automáticamente»: los cobros por QR y tarjeta se confirman solos"
    },
    {
     "n": 4,
-    "text": "Guardá y tocá Probar conexión: tiene que decir Conexión correcta"
+    "text": "Guardá y tocá «Probar conexión»: tiene que decir «Conexión correcta»"
    }
   ],
   "callout": {
@@ -1441,23 +1491,23 @@
    "crop": {
     "x": 0,
     "y": 28.2,
-    "w": 58,
+    "w": 64,
     "h": 71.8
    },
    "marks": [
     {
      "n": 2,
-     "x": 50.7,
+     "x": 45.9,
      "y": 25.5
     },
     {
      "n": 3,
-     "x": 66,
+     "x": 64.3,
      "y": 6.4
     },
     {
      "n": 4,
-     "x": 41,
+     "x": 37.2,
      "y": 84
     }
    ]
@@ -1465,56 +1515,71 @@
  },
  {
   "id": "e05-respaldos",
-  "layout": "two-shots",
+  "layout": "shot-wide",
   "section": "Administración",
-  "title": "Copias de seguridad y Google Drive",
-  "lead": "Cada día se guarda una copia en la PC y cada semana un Excel y una copia completa. Si todo queda solo en la PC y se rompe, se pierde.",
-  "left": {
-   "image": {
-    "id": "admin-respaldos",
-    "crop": {
-     "x": 4,
-     "y": 25.2,
-     "w": 92,
-     "h": 44.8
-    },
-    "marks": [
-     {
-      "n": 1,
-      "x": 52.6,
-      "y": 72.2
-     },
-     {
-      "n": 2,
-      "x": 72.3,
-      "y": 12
-     }
-    ]
-   },
-   "caption": "**1** Administración → Respaldos: cada copia y su estado\n**2** Botón para hacer una ahora"
-  },
-  "right": {
-   "image": {
-    "id": "admin-config-respaldos",
-    "marks": [
-     {
-      "n": 3,
-      "x": 55,
-      "y": 20.6
-     },
-     {
-      "n": 4,
-      "x": 28.5,
-      "y": 51.2
-     }
-    ]
-   },
-   "caption": "**3** Opción A (recomendada): carpeta en «Mi unidad» de Drive\n**4** Opción B: subida directa"
-  },
+  "title": "Copias de seguridad en la PC",
+  "lead": "Cada día se guarda una copia en la PC y cada semana un Excel con una copia completa. Se ven en **Administración → Respaldos**.",
   "callout": {
    "kind": "warn",
-   "text": "Con **Drive para ordenador** sube todo, también la copia diaria. La **opción B** sube solo lo semanal y se probó solo simulada."
-  }
+   "text": "Si todo queda solo en la PC y la PC se rompe, se pierde todo. Por eso conviene mandarlo a Drive (siguiente diapositiva)."
+  },
+  "image": {
+   "id": "admin-respaldos",
+   "crop": {
+    "x": 4,
+    "y": 25.2,
+    "w": 92,
+    "h": 44.8
+   },
+   "box": [
+    1152,
+    330
+   ],
+   "marks": [
+    {
+     "n": 1,
+     "x": 43.3,
+     "y": 61.0
+    },
+    {
+     "n": 2,
+     "x": 68.9,
+     "y": 17.3
+    }
+   ]
+  },
+  "caption": "**1** Cada copia y su estado: «Correcto» si salió bien · **2** Botón para hacer una ahora, sin esperar al lunes"
+ },
+ {
+  "id": "e05b-drive",
+  "layout": "shot-wide",
+  "section": "Administración",
+  "title": "Mandar las copias a Google Drive",
+  "lead": "En **Administración → Configuración → Respaldos y Google Drive** hay dos formas de mandar las copias a tu Drive.",
+  "callout": {
+   "kind": "warn",
+   "text": "Con la opción A sube todo, también la copia diaria. La opción B sube solo lo semanal, y solo se probó con una cuenta simulada, no con una real."
+  },
+  "image": {
+   "id": "admin-config-respaldos",
+   "box": [
+    1152,
+    330
+   ],
+   "marks": [
+    {
+     "n": 3,
+     "x": 88,
+     "y": 20.3
+    },
+    {
+     "n": 4,
+     "x": 30.4,
+     "y": 51.3
+    }
+   ]
+  },
+  "caption": "**3** Opción A (recomendada): con «Google Drive para ordenador», elegí una carpeta dentro de «Mi unidad» · **4** Opción B: subida directa a tu cuenta (hay que crear credenciales una vez)"
  },
  {
   "id": "e06-auditoria",
@@ -1542,7 +1607,7 @@
   ],
   "callout": {
    "kind": "tip",
-   "text": "Si hay una diferencia, acá ves retiros, anulaciones y ajustes, y quién los hizo. Muestra las últimas 200 acciones."
+   "text": "Si la caja no cierra, acá ves los retiros, las anulaciones y los ajustes, y quién los hizo. Se muestran las últimas 200 acciones."
   },
   "image": {
    "id": "admin-auditoria",
@@ -1555,26 +1620,31 @@
    "marks": [
     {
      "n": 1,
-     "x": 12.9,
+     "x": 9.5,
      "y": 19.6
     },
     {
      "n": 2,
-     "x": 28.9,
+     "x": 26.8,
      "y": 19.6
     },
     {
      "n": 3,
-     "x": 46.8,
+     "x": 39.7,
      "y": 19.6
     },
     {
      "n": 4,
-     "x": 60.3,
+     "x": 59.3,
      "y": 19.6
     }
+   ],
+   "box": [
+    720,
+    520
    ]
-  }
+  },
+  "textWidth": 36
  },
  {
   "id": "f01-seccion",
@@ -1583,7 +1653,7 @@
   "number": "6",
   "title": "Cómo se armó y qué falta",
   "subtitle": "Sin vueltas: qué está probado, qué no y qué falta para empezar.",
-  "agenda": "Cómo está armado, qué está probado, seguridad, copias y qué falta"
+  "agenda": "Cómo está armado, qué está probado, seguridad, copias, preguntas, límites y qué falta"
  },
  {
   "id": "f02-adentro",
@@ -1650,7 +1720,7 @@
    {
     "icon": "✅",
     "heading": "Un turno entero de prueba",
-    "text": "Un programa de prueba hizo un turno entero: vender, cobrar, anular, cerrar y bajar Excel y PDF."
+    "text": "Un programa de prueba recorrió todo: vender, cobrar, anular, cerrar y bajar Excel y PDF."
    },
    {
     "icon": "✅",
@@ -1665,12 +1735,12 @@
    {
     "icon": "⏳",
     "heading": "Google Drive de verdad",
-    "text": "La subida a Drive solo se probó simulada. Lo recomendado: «Google Drive para ordenador»."
+    "text": "La subida a Drive solo se probó con una cuenta simulada. Lo recomendado: «Google Drive para ordenador»."
    },
    {
     "icon": "⏳",
     "heading": "Una PC con Windows",
-    "text": "El paquete está armado, pero los accesos «Iniciar» y «Detener» no se probaron en una PC con Windows."
+    "text": "El programa para Windows está armado, pero los íconos «Iniciar» y «Detener» todavía no se probaron en una PC con Windows."
    }
   ]
  },
@@ -1715,7 +1785,7 @@
   ],
   "callout": {
    "kind": "warn",
-   "text": "El código de 4 dígitos protege por el bloqueo, no por ser imposible de adivinar. Cuidá la PC."
+   "text": "El código de 4 dígitos protege por el bloqueo, no por ser imposible de adivinar. Cuidá la PC: también queda guardada ahí la clave de Mercado Pago."
   }
  },
  {
@@ -1734,7 +1804,8 @@
       {
        "icon": "📅",
        "title": "Una copia por día",
-       "text": "De todos los datos. Se guardan las últimas 14."
+       "text": "De todos los datos. Se guardan las últimas 14.",
+       "noArrow": true
       },
       {
        "icon": "🗓️",
@@ -1749,7 +1820,7 @@
       {
        "icon": "☁️",
        "title": "Drive (opcional)",
-       "text": "Con Drive para ordenador sube todo. Con subida directa, solo el resumen semanal."
+       "text": "Con «Google Drive para ordenador» sube todo. Con subida directa, solo el resumen semanal."
       }
      ]
     },
@@ -1765,7 +1836,7 @@
       {
        "icon": "🧹",
        "title": "2. Borrar restos",
-       "text": "En la carpeta datos, borrá los archivos que terminan en -wal y -shm, si existen."
+       "text": "En la carpeta datos, borrá los archivos que terminan en «-wal» y «-shm» (si existen)."
       },
       {
        "icon": "📋",
@@ -1781,7 +1852,7 @@
     }
    ]
   },
-  "caption": "Si la PC se rompe, volvés al día de la última copia que esté afuera de la PC: lo vendido después se pierde (con la subida directa a Drive, hasta una semana). Pasos completos: LEEME.txt."
+  "caption": "Si la PC se rompe, volvés a la última copia que esté afuera de la PC; lo vendido después se pierde. Pasos completos: LEEME.txt."
  },
  {
   "id": "f06-quepasa",
@@ -1795,11 +1866,11 @@
    },
    {
     "q": "¿Y si se corta la luz o se apaga la PC?",
-    "a": "Los datos no se dañan: cada venta se graba al instante y el turno sigue abierto. Al volver, mirá «Últimos cobros» por las dudas."
+    "a": "No debería dañarse nada: cada venta se graba al instante y el turno sigue abierto. Al volver, mirá «Últimos cobros» por las dudas."
    },
    {
     "q": "¿Y si se rompe la PC?",
-    "a": "Instalás el programa en otra PC y restaurás la última copia de Drive: lo vendido después se pierde. Si estaban solo en esa PC, se pierde todo."
+    "a": "Instalás el programa en otra PC y restaurás la última copia de Drive: lo vendido después se pierde. Si las copias estaban solo en esa PC, se pierde todo."
    },
    {
     "q": "¿Y si alguien se equivoca de producto o de cobro?",
@@ -1824,10 +1895,10 @@
    "heading": "Lo que sí hace",
    "tone": "good",
    "bullets": [
-    "Vende productos y promos; cobra con efectivo, QR, débito y crédito",
+    "Vende productos y promos; cobra con efectivo, transferencia / QR, débito y crédito",
     "Controla la caja y el stock, y arma el cierre en pantalla, Excel y PDF",
     "Anota la entrada y salida del personal, y quién hizo cada venta y cada cambio",
-    "Sigue vendiendo si se corta internet y hace copias solo"
+    "Sigue vendiendo si se corta internet y hace las copias de seguridad automáticamente"
    ]
   },
   "right": {
@@ -1886,7 +1957,7 @@
   "layout": "checklist",
   "section": "Cómo se armó y qué falta",
   "title": "Qué falta para empezar",
-  "lead": "Esto falta para empezar. Los precios y datos de la demostración son de ejemplo.",
+  "lead": "Los precios y datos de la demostración son de ejemplo: hay que cargar los reales.",
   "items": [
    {
     "text": "Instalar en la PC del local y probar que abra bien en Windows",
@@ -1905,21 +1976,21 @@
    },
    {
     "text": "Conectar tu Mercado Pago y hacer un cobro de prueba de $100",
-    "who": "Con ayuda",
+    "who": "Con quien instala",
     "done": false
    },
    {
     "text": "Elegir cómo van las copias a Drive",
-    "who": "Con ayuda",
+    "who": "Con quien instala",
     "done": false
    },
    {
-    "text": "Practicar un turno completo con las cajeras",
-    "who": "Vos y las cajeras",
+    "text": "Practicar un turno completo con quienes cobran",
+    "who": "Vos y quienes cobran",
     "done": false
    },
    {
-    "text": "Pedir a la franquicia el logo y la letra oficiales (puede esperar)",
+    "text": "Pedir a la franquicia Mr.Cook el logo y la letra oficiales (puede esperar)",
     "who": "Vos",
     "done": false
    }

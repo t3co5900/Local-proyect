@@ -87,7 +87,8 @@ export function PublicClock() {
         <Field label="Usuario">
           {(id) => (
             <input id={id} className="input" autoFocus autoComplete="off" autoCapitalize="off" spellCheck={false}
-              value={username} onChange={(e) => setUsername(e.target.value)} />
+              value={username} onChange={(e) => setUsername(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }} />
           )}
         </Field>
         <PinPad value={pin} onChange={setPin} onSubmit={() => {}} busy={busy} submitLabel="" />

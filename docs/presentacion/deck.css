@@ -16,7 +16,7 @@ b, strong { font-weight: 800; }
 .top { height: 58px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; }
 .kicker { font-size: 15px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
 .kicker::before { content: ''; width: 28px; height: 8px; border-radius: 4px; background: var(--yellow); }
-.content { flex: 1; min-height: 0; padding: 0 64px 8px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.content { flex: 1; min-height: 0; padding: 0 64px 16px; display: flex; flex-direction: column; gap: 14px; position: relative; }
 .foot { height: 46px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); font-weight: 600; }
 .foot img { height: 28px; display: block; }
 .foot .pg { font-weight: 900; color: var(--ink); }
@@ -79,12 +79,14 @@ ol.steps li { display: flex; gap: 14px; align-items: flex-start; font-size: 21px
 .cols.shot-r > .txt { flex: 0 0 41%; order: 2; }
 .cols.shot-r > .imgbox { order: 1; }
 .two { flex: 1; min-height: 0; display: flex; gap: 28px; }
+.two { align-items: center; }
 .two > div { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; min-height: 0; }
 .two .imgbox { flex: 1; width: 100%; }
 
 /* ---------- tablas de ejemplo ---------- */
 table.ex { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 20px; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(24,24,22,.08); }
 table.ex th { background: var(--yellow); text-align: left; padding: 10px 14px; font-weight: 900; font-size: 17px; }
+table.ex td:not(:first-child) { white-space: nowrap; }
 table.ex td { padding: 9px 14px; border-top: 1px solid var(--line); font-weight: 600; }
 table.ex tr:nth-child(even) td { background: #fbfaf6; }
 table.ex.dense th { padding: 8px 14px; }
@@ -143,9 +145,9 @@ table.ex td.neg { color: var(--red); font-weight: 900; }
 .deq .hd, .deq .rw { display: grid; grid-template-columns: 190px repeat(var(--cols), 1fr); gap: 10px; align-items: center; }
 .deq .hd div { text-align: center; font-weight: 900; font-size: 19px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .deq .hd div:first-child { text-align: left; }
-.deq .rw { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 10px 14px; }
-.deq .rw .nm { font-weight: 900; font-size: 24px; }
-.deq .rw .v { text-align: center; font-size: 34px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.deq .rw { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 6px 14px; }
+.deq .rw .nm { font-weight: 900; font-size: 22px; }
+.deq .rw .v { text-align: center; font-size: 30px; font-weight: 900; font-variant-numeric: tabular-nums; }
 .deq .rw .v.last { background: var(--yellow); border-radius: 12px; padding: 4px 0; }
 .deq .rw .v.op { color: var(--ink-3); }
 .dflow { display: flex; flex-direction: column; gap: 18px; }
@@ -175,3 +177,19 @@ table.ex td.neg { color: var(--red); font-weight: 900; }
 .dbars .bar.top .col { background: var(--ink); }
 .dlabels { display: flex; gap: 16px; padding: 0 10px; }
 .dlabels div { flex: 1; text-align: center; font-weight: 800; font-size: 18px; color: var(--ink-3); }
+
+.nw { white-space: nowrap; }
+.drow .b.na::after { display: none; }
+.drow .b.na { margin-right: 26px; }
+/* dos imágenes una arriba de la otra, cada una con su texto al costado */
+.two.stack { flex-direction: column; gap: 14px; }
+.two.stack > div { flex-direction: row; align-items: center; gap: 24px; }
+.two.stack .imgbox { flex: none; width: auto; }
+.two.stack .cap { text-align: left; flex: 1; margin-top: 0; font-size: 19px; }
+/* portada del índice y tarjetas con más aire */
+.agenda { gap: 18px 30px; margin-top: 8px; }
+.ag { padding: 20px 22px; }
+.ag .s { font-size: 18px; }
+.cmp ul.bul { gap: 16px; }
+.cmp ul.bul li { font-size: 24px; }
+.deq .hd { margin-top: 16px; }

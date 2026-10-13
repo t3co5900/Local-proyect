@@ -196,7 +196,7 @@ function VoidModal({ sale, onClose, onDone }) {
         {!isAdmin && (
           <>
             <div className="notice dark">Una anulación la autoriza un encargado: que ingrese su usuario y código.</div>
-            <Field label="Usuario del encargado">{(id) => <input id={id} className="input" autoComplete="off" value={sup} onChange={(e) => setSup(e.target.value)} />}</Field>
+            <Field label="Usuario del encargado">{(id) => <input id={id} className="input" autoComplete="off" value={sup} onChange={(e) => setSup(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }} />}</Field>
             <PinPad value={pin} onChange={setPin} onSubmit={() => ready && submit()} busy={busy} />
           </>
         )}
