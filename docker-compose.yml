@@ -1,0 +1,15 @@
+services:
+  mrcook:
+    build: .
+    container_name: mrcook
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3737:3737"   # solo desde esta máquina; para publicar usá un proxy con HTTPS
+    environment:
+      TZ_NEGOCIO: America/Argentina/Buenos_Aires
+      # COOKIE_SECURE: "1"      # activar solo detrás de HTTPS
+      # MP_ACCESS_TOKEN: ""     # alternativa a guardar el token en la base
+    volumes:
+      - mrcook-data:/data
+volumes:
+  mrcook-data:

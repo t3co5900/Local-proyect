@@ -127,7 +127,7 @@ export function createApp(ctx) {
   // cookie de sesión del navegador (sin Max-Age: se borra al cerrar la ventana);
   // la caducidad por inactividad la controla el servidor
   const setCookie = (res, token, { clear = false } = {}) =>
-    res.setHeader('Set-Cookie', `${COOKIE}=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/${clear ? '; Max-Age=0' : ''}`);
+    res.setHeader('Set-Cookie', `${COOKIE}=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/${ctx.config.cookieSecure ? '; Secure' : ''}${clear ? '; Max-Age=0' : ''}`);
 
   const sessionInfo = (user) => ({
     user: { id: user.id, fullName: user.full_name, role: user.role },

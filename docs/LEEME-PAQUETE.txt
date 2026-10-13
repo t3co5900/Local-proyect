@@ -1,0 +1,40 @@
+MR.COOK POS  -  versión {{VERSION}}
+=====================================
+
+PARA EMPEZAR
+  1) Descomprimí esta carpeta completa en el disco C: (por ejemplo C:\MrCook).
+     No la uses desde adentro del .zip ni desde "Descargas".
+  2) Doble clic en  "Iniciar Mr.Cook.bat". Se abre la ventana del programa.
+  3) La primera vez te pide crear el usuario ENCARGADO. El sistema le asigna un
+     código de 4 dígitos: ANOTALO, no se vuelve a mostrar.
+  4) (Recomendado) Doble clic en "Crear accesos directos.bat": deja el ícono
+     "Mr.Cook POS" en el Escritorio y, si querés, hace que arranque solo al
+     prender la PC.
+
+FUNCIONA SIN INTERNET
+  Ventas, caja, stock, fichaje y cierres funcionan sin conexión. Solo necesitan
+  internet la confirmación automática de Mercado Pago y la subida del respaldo a
+  Google Drive. Si se corta, se puede seguir cobrando: el cobro por QR/tarjeta se
+  confirma a mano y queda marcado en el cierre para revisarlo después.
+
+DÓNDE ESTÁN LOS DATOS
+  Todo se guarda en la carpeta  datos\  (al lado de este archivo):
+     datos\mrcook.sqlite      la base de datos (ventas, stock, usuarios...)
+     datos\backups\           copias diarias y respaldos semanales (Excel + base)
+  HACÉ COPIA DE ESA CARPETA si cambiás de PC. No borres "datos".
+
+PARA CERRAR
+  Cerrá la ventana del programa. Para detener el servidor por completo (por
+  ejemplo antes de apagar o copiar los datos) usá "Detener Mr.Cook.bat".
+  Apagar la PC sin detenerlo no daña los datos.
+
+SI ALGO NO ANDA
+  - Mirá datos\servidor-errores.log
+  - Que el puerto 3737 no lo esté usando otro programa.
+  - Si la ventana no abre sola, entrá desde el navegador a  http://localhost:3737
+
+RESTAURAR UNA COPIA
+  1) Ejecutá "Detener Mr.Cook.bat".
+  2) Copiá el archivo de respaldo (.sqlite) sobre datos\mrcook.sqlite
+     (borrá antes mrcook.sqlite-wal y mrcook.sqlite-shm si existen).
+  3) Ejecutá "Iniciar Mr.Cook.bat".

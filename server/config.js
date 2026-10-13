@@ -20,6 +20,9 @@ export function loadConfig(env = process.env) {
     backupDir: path.join(dataDir, 'backups'),
     webDir: path.resolve(env.MRCOOK_WEB_DIR || path.join(ROOT, 'web', 'dist')),
     timezone: env.TZ_NEGOCIO || 'America/Argentina/Buenos_Aires',
+    // horas de INACTIVIDAD tras las cuales hay que volver a ingresar
     sessionHours: Number(env.SESSION_HOURS || 12),
+    // poner COOKIE_SECURE=1 solo si se publica detrás de HTTPS (VPS con proxy)
+    cookieSecure: env.COOKIE_SECURE === '1',
   };
 }

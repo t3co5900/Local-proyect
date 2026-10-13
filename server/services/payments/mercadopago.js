@@ -8,7 +8,8 @@
 // IMPORTANTE: requiere internet. Sin conexión, el cobro queda pendiente y la
 // persona de caja puede confirmarlo a mano (queda marcado como "manual").
 
-const API = 'https://api.mercadopago.com';
+// MP_API_BASE solo se usa para pruebas (apuntar a un Mercado Pago simulado)
+const apiBase = () => process.env.MP_API_BASE || 'https://api.mercadopago.com';
 
 /** Tipo de medio de pago de Mercado Pago -> método interno. */
 export function mapPaymentType(typeId) {
@@ -45,7 +46,7 @@ export function normalizePayment(r) {
 
 export function createMercadoPagoProvider({ accessToken, fetchImpl = fetch, timeoutMs = 8000 }) {
   async function call(path, params = {}) {
-    const url = new URL(API + path);
+    const url = new URL(apiBase() + path);
     for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
     let res;
     try {
